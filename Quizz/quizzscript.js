@@ -177,17 +177,19 @@ unitOptions.forEach(options => {
                     newMalshab.Unit = infantryEvent.target.textContent
 
                 })
+                
             })
         }
 
 
-
-
     })
+    
 })
 
 
+finishContainer.addEventListener("click", function(){
+    console.log(newMalshab)
+    localStorage.setItem('DATA', JSON.stringify(newMalshab))
+})
 
 
-
-// localStorage.setItem('JSON', JSON.stringify(newMalshab))
