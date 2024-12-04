@@ -188,7 +188,6 @@ unitOptions.forEach(options => {
 
 
 finishContainer.addEventListener("click", function(){
-    console.log(newMalshab)
     localStorage.setItem('DATA', JSON.stringify(newMalshab))
 })
 
