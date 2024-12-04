@@ -1,16 +1,27 @@
 * {
-    border: red solid 1px;
+  border: red solid 1px;
 }
 #result {
-    width: 50%;
-    height: 60%;
+  width: 90vw;
+  height: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+#unitVideo {
+  width: 30vw;
+  height: 30vw;
+}
+#unitDescription {
+  width: 40vw;
+  height: 30vw;
 }
 #main {
-    position: relative;
-    top: 80px;
-    left: 0;
+  position: relative;
+  top: 80px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
 }
 #footer {
-    position: relative;
-
+  position: relative;
 }
