@@ -1,7 +1,6 @@
-import dotenv from "dotenv";
+import 'dotenv/config.js'
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
-dotenv.config();
 
 // test variables:
 const userData = {
@@ -44,7 +43,7 @@ i am ${user.age}, my height is ${user.height} and my weight is ${user.weight} kg
   }
 }
 const button = document.getElementById("generatebutton");
-const genAIdiv = document.getElementById("genAIresponse");
+const genAIdiv = document.getElementById("result");
 
 
 button.addEventListener("click", async function () {
@@ -56,7 +55,7 @@ button.addEventListener("click", async function () {
     age: Userobject.age,
     weight: Userobject.weight,
     height: Userobject.height,
-    unit:Userobject.unit,
+    unit: Userobject.unit,
     injuries: Userobject.injuries,
     currentActivity: Userobject.Current_activity,
     routine: Userobject.excercise_routine,
