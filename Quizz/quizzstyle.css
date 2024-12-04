@@ -1,126 +1,129 @@
-*{
-    margin:  0;
-    padding:  0;
-    border: 1px solid red;
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
 }
 button {
-    cursor: pointer;
-    font-size: 30px;
-    width: 60%;
-    height: 10%;
+  cursor: pointer;
+  font-size: 30px;
+  width: 60%;
+  height: 10%;
 }
 
 .button-height {
-    height:  25%;
+  height: 25%;
 }
 
-#hero-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    flex-direction: column;
-
+#hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  flex-direction: column;
 }
-#nav{
-    width: 100vw;
-    height: 80px;
+#nav {
+  width: 100vw;
+  height: 80px;
 }
-.containers{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 70%;
-    justify-content: start;
-    text-align: center;
-    align-items: center;
-    padding: 2%;
-    gap: 5%;
-    
-}
-.title{
-    font-size: 60px;
-    margin-bottom: 5%;
+a:link {
+  text-decoration: none;
 }
 
-
-#age-container{
-    display: flex;
+a:visited {
+  text-decoration: none;
 }
 
-#height-container{
-    display: none;
+a:hover {
+  text-decoration: none;
 }
-#weight-container{
-    display: none;
+#warrior-logo {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+  margin-right: 20px;
 }
-#background-container{
-    display: none;
+.containers {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 70%;
+  justify-content: start;
+  text-align: center;
+  align-items: center;
+  padding: 2%;
+  gap: 5%;
+  
 }
-#workout-container{
-    display: none;
-}
-#profile-container{
-    display: none;
-}
-#frequency-container{
-    display: none;
-}
-#gym-access-container{
-    display: none;
-}
-#unit-container{
-    display: none;
-}
-@media (max-width: 976px){
-    .title{
-        font-size: 40px;
-    }
-
-    button {
-        font-size: 25px;
-    }
-    
-
-
+.title {
+  font-size: 60px;
+  margin-bottom: 5%;
 }
 
-@media (max-width: 534px){
-    .title{
-        font-size: 35px;
-    }
-
-    button {
-        font-size: 22px;
-    }
-    
-
-
+#age-container {
+  display: flex;
 }
 
-@media (max-width: 500px){
-    .title{
-        font-size: 25px;
-    }
+#height-container {
+  display: none;
+}
+#weight-container {
+  display: none;
+}
+#background-container {
+  display: none;
+}
+#workout-container {
+  display: none;
+}
+#profile-container {
+  display: none;
+}
+#frequency-container {
+  display: none;
+}
+#gym-access-container {
+  display: none;
+}
+#unit-container {
+  display: none;
+}
+@media (max-width: 976px) {
+  .title {
+    font-size: 40px;
+  }
 
-    button {
-        font-size: 22px;
-    }
-    
-
-
+  button {
+    font-size: 25px;
+  }
 }
 
-@media (max-width: 335px){
-    .title{
-        font-size: 20px;
-    }
+@media (max-width: 534px) {
+  .title {
+    font-size: 35px;
+  }
 
-    button {
-        font-size: 17px;
-    }
-    
+  button {
+    font-size: 22px;
+  }
+}
 
+@media (max-width: 500px) {
+  .title {
+    font-size: 25px;
+  }
 
+  button {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 335px) {
+  .title {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 17px;
+  }
 }
