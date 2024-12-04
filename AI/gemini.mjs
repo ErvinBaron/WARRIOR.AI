@@ -14,10 +14,8 @@ const userData = {
   Profile: 42,
   Gym_access: "gym",
 };
-localStorage.setItem("JSON1", JSON.stringify(userData));
-console.log(JSON.parse(localStorage.getItem("JSON1")));
-localStorage.setItem("JSON1", JSON.stringify(userData));
-console.log(JSON.parse(localStorage.getItem("JSON1")));
+// localStorage.setItem("JSON1", JSON.stringify(userData));
+console.log(JSON.parse(localStorage.getItem("JSON")));
 
 const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
 const generationConfig = {
@@ -45,7 +43,6 @@ async function generateResponse(user) {
      important physical aspect of the rule. make sure the workouts provided are as explained as possible.
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
-    const result = await model.generateContent(prompt, generationConfig);
     console.log(result.response.text());
     return result.response.text();
   } catch (error) {
@@ -59,15 +56,7 @@ const exercisediv = document.getElementById("unitexercise");
 button.addEventListener("click", async function () {
   const response = await generateResponse(userData);
   console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
-  );
-  let dataobject = response
-    .replace("javascript", "")
-    .replace(" const", "")
-    .replaceAll("`", "");
-  console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
-  );
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", ""))
   let dataobject = response
     .replace("javascript", "")
     .replace(" const", "")
