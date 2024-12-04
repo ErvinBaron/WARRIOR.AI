@@ -44,18 +44,7 @@ a{
     width: 100vw;
     height: 80px;
 }
-.containers{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 70%;
-    justify-content: start;
-    text-align: center;
-    align-items: center;
-    padding: 2%;
-    gap: 2%;
-    
-}
+
 .title{
     font-size: 60px;
     margin-bottom: 5%;
@@ -84,7 +73,7 @@ a:hover {
   text-align: center;
   align-items: center;
   padding: 2%;
-  gap: 5%;
+  gap: 2%;
   
 }
 .title {
