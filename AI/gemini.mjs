@@ -33,7 +33,7 @@ async function generateResponse(user) {
      use clear and concise keys, suchs as days of the week and topics. 
      open and close the answer with {} and add no other element or letter before or after.
      use under score "_" instead of "-". make sure all the object keys are of the following:
-     "age","height,"weight","unit","profile","unitSummery", "currentActivity", "routine". the routine key shoul always have "activity" and "description".
+     "age","height,"weight","unit","profile","unitSummery", "currentActivity", "routine". the routine key should always have "activity" and "description".
      I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
      assume i am a student, my school begine around 8am and ends in around 2pm.
      incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
@@ -77,7 +77,7 @@ button.addEventListener("click", async function () {
 
   console.log(Userobject);
   unitsummerydiv.innerHTML = `${Userobject.unitSummery}`;
-  exercisediv.textContent = `${Userobject.exercise_routine}`;
+  exercisediv.textContent = `${Userobject.routine.sunday.description}`;
 });
 // .routine.Friday.description
 
