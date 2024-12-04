@@ -1,0 +1,16 @@
+* {
+    border: red solid 1px;
+}
+#result {
+    width: 50%;
+    height: 60%;
+}
+#main {
+    position: relative;
+    top: 80px;
+    left: 0;
+}
+#footer {
+    position: relative;
+
+}
