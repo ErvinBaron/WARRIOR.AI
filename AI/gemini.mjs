@@ -9,11 +9,13 @@ const userData = {
   Height: 176,
   Weight: 87,
   Background: "basketball 1 time a week for 2 hours",
-  Unit: "golani",
+  Unit: "Givati",
   Frequency: "3 days",
   Profile: 42,
   Gym_access: "gym",
 };
+localStorage.setItem("JSON1", JSON.stringify(userData));
+console.log(JSON.parse(localStorage.getItem("JSON1")));
 localStorage.setItem("JSON1", JSON.stringify(userData));
 console.log(JSON.parse(localStorage.getItem("JSON1")));
 
@@ -43,6 +45,7 @@ async function generateResponse(user) {
      important physical aspect of the rule. make sure the workouts provided are as explained as possible.
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
+    const result = await model.generateContent(prompt, generationConfig);
     console.log(result.response.text());
     return result.response.text();
   } catch (error) {
@@ -55,6 +58,13 @@ const exercisediv = document.getElementById("unitexercise");
 
 button.addEventListener("click", async function () {
   const response = await generateResponse(userData);
+  console.log(
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
+  );
+  let dataobject = response
+    .replace("javascript", "")
+    .replace(" const", "")
+    .replaceAll("`", "");
   console.log(
     response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
   );
@@ -84,3 +94,36 @@ button.addEventListener("click", async function () {
 // // generateResponse(userData);
 // run this:
 //  node --env-file=.env.local gemini.js
+
+const unitArray = {
+  Golani: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Golani: `<iframe width="560" height="315" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Givati: `<iframe width="560" height="315" src="https://www.youtube.com/embed/9VDsks7hO2I?si=majAgp8hVjU_CrAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Givati: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/9VDsks7hO2I?si=majAgp8hVjU_CrAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Shayetet13: `<iframe width="560" height="315" src="https://www.youtube.com/embed/r9hCa2wg0c8?si=SdJ_KFHn4RubXVJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Duvdevan: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Hpp8iBdzrJw?si=AOrGvTaOpXdhORhz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Maglan: `<iframe width="560" height="315" src="https://www.youtube.com/embed/aeoAg84FL7A?si=HmL3-cssWYP8x87T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Pilot: `<iframe width="560" height="315" src="https://www.youtube.com/embed/MZimWcaYPwY?si=vQQKjo7C0L6hBsic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Oketz: `<iframe width="560" height="315" src="https://www.youtube.com/embed/x9QBzaOCeQo?si=Nj17omZT505md3GQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Egoz: `<iframe width="560" height="315" src="https://www.youtube.com/embed/jhio6VHP3U0?si=Zm6eLt2vzQ1SltbF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Nahal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G0zF4CG2ENo?si=o0XofMsT0Baupsuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Kfir: `<iframe width="560" height="315" src="https://www.youtube.com/embed/4x670n72k14?si=9twCIDAxKah2Ly11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Tzanhanim: `<iframe width="560" height="315" src="https://www.youtube.com/embed/-wOJeT8l6Ww?si=JrS249u_Atnxl5sJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Nahal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G0zF4CG2ENo?si=o0XofMsT0Baupsuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_matkal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6hFHRoKkNII?si=ktBcgXOU02OZLkOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+};
+const videoBox = document.getElementById("unitVideo");
+let found = false;
+
+for (let key in unitArray) {
+  if (key == userData.Unit) {
+    videoBox.innerHTML = unitArray[key];
+    found = true; // Mark as found
+    break; // Stop the loop
+  }
+}
+
+if (!found) {
+  // Default content if no match is found
+  videoBox.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/yGHp8u7iE4s?si=neg1cnhiW8KOzkxg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+}
