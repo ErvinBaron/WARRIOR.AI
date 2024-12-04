@@ -10,9 +10,7 @@ button {
     height: 10%;
 }
 
-.button-height {
-    height:  25%;
-}
+
 
 #hero-main{
     display: flex;
@@ -36,7 +34,7 @@ button {
     text-align: center;
     align-items: center;
     padding: 2%;
-    gap: 5%;
+    gap: 2%;
     
 }
 .title{
