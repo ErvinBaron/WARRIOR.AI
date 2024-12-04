@@ -1,7 +1,7 @@
 
 
 import { malshab } from "./malshab.js";
-const newMalshab = { ...malshab }
+export const newMalshab = { ...malshab }
 const ageOptions = document.querySelectorAll('#age-container button');
 const ageContainer = document.getElementById('age-container')
 const heightOptions = document.querySelectorAll('#height-container button');
@@ -112,7 +112,6 @@ unitOptions.forEach(options => {
         console.log(newMalshab)
     })
 })
-
 
 
 
