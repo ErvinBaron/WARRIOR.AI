@@ -2,7 +2,7 @@
   border: red solid 1px;
 }
 #result {
-  padding-top: 5vw;
+  padding-top: 2vw;
   width: 90vw;
   height: 50vw;
   display: flex;
@@ -20,12 +20,21 @@
   color: black;
 }
 #main {
-  position: relative;
   top: 80px;
   left: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #footer {
   position: relative;
+}
+#unitexercize {
+  width: 100vw;
+  height: 30vw;
+}
+#unitDiet {
+  width: 100vw;
+  height: 30vw;
 }
