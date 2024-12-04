@@ -1,7 +1,7 @@
 
 
 import { malshab } from "./malshab.js";
- const newMalshab = { ...malshab }
+const newMalshab = { ...malshab }
 const ageOptions = document.querySelectorAll('#age-container button');
 const ageContainer = document.getElementById('age-container')
 const heightOptions = document.querySelectorAll('#height-container button');
@@ -20,8 +20,14 @@ const gymAccessOptions = document.querySelectorAll('#gym-access-container button
 const gymAccessContainer = document.getElementById('gym-access-container')
 const unitOptions = document.querySelectorAll('#unit-container button')
 const unitContainer = document.getElementById('unit-container')
-
-
+const specialUnitOptions = document.querySelectorAll('#special-unit-container button')
+const specialUnitContainer = document.getElementById('special-unit-container')
+const sayarotOptions = document.querySelectorAll('#sayarot-container button')
+const sayarotContainer = document.getElementById('sayarot-container')
+const InfantryOptions = document.querySelectorAll('#infantry-container button')
+const infantryContainer = document.getElementById('infantry-container')
+const aFinish = document.querySelectorAll('#a-finish')
+const finishContainer = document.getElementById('finish-container')
 
 ageOptions.forEach(option => {
     option.addEventListener('click', event => {
@@ -107,17 +113,81 @@ gymAccessOptions.forEach(options => {
 
 unitOptions.forEach(options => {
     options.addEventListener('click', (unitEvent) => {
-        newMalshab.Unit = unitEvent.target.textContent
-        unitContainer.style.display = 'flex';
-        const finish = document.createElement('button')
-        unitContainer.appendChild(finish)
-        finish.textContent = 'Finish Quizz'
-        unitOptions.style.display = 'none'
+        unitContainer.style.display = 'none';
         console.log(newMalshab)
+        if (unitEvent.target.textContent === 'Special operations') {
+            specialUnitContainer.style.display = 'flex';
+            specialUnitOptions.forEach(specialunit => {
+                specialunit.addEventListener('click', (specialUnitEvent) => {
+                    if (specialUnitEvent.target.textContent === 'Sayeret matkal') {
+                        newMalshab.Unit = 'Sayeret_matkal'
+                        specialUnitContainer.style.display = 'none';
+                        finishContainer.style.display = 'flex'
+
+                    }
+                    else {
+                        newMalshab.Unit = specialUnitEvent.target.textContent;
+                        specialUnitContainer.style.display = 'none';
+
+                        finishContainer.style.display = 'flex'
+
+                    }
+
+                })
+            })
+
+        }
+        else if (unitEvent.target.textContent === 'Sayarot') {
+            sayarotContainer.style.display = 'flex';
+            sayarotOptions.forEach(options => {
+                options.addEventListener('click', (sayarotEvent) => {
+                    if (sayarotEvent.target.textContent === 'Sayeret Golani') {
+                        sayarotContainer.style.display = 'none'
+                        finishContainer.style.display = 'flex'
+
+                        newMalshab.Unit = 'Sayeret_Golani'
+                    }
+                    else if (sayarotEvent.target.textContent === 'Sayeret Givati') {
+                        sayarotContainer.style.display = 'none'
+                        finishContainer.style.display = 'flex'
+                        newMalshab.Unit = 'Sayeret_Givati'
+                    }
+                    else if (sayarotEvent.target.textContent === 'Sayeret Nahal') {
+                        sayarotContainer.style.display = 'none'
+                        finishContainer.style.display = 'flex'
+                        newMalshab.Unit = 'Sayeret_Nahal'
+                    }
+                    else {
+                        sayarotContainer.style.display = 'none'
+                        finishContainer.style.display = 'flex'
+                        newMalshab.Unit = sayarotEvent.target.textContent
+
+                    }
+
+                })
+            })
+        }
+
+        else if (unitEvent.target.textContent === 'Infantry') {
+            infantryContainer.style.display = 'flex';
+            InfantryOptions.forEach(options => {
+                options.addEventListener('click', (infantryEvent) => {
+                    infantryContainer.style.display = 'none'
+                        finishContainer.style.display = 'flex'
+                    newMalshab.Unit = infantryEvent.target.textContent
+
+                })
+            })
+        }
+
+
+
+
     })
 })
 
 
 
 
-localStorage.setItem('JSON', JSON.stringify(newMalshab))
+
+// localStorage.setItem('JSON', JSON.stringify(newMalshab))

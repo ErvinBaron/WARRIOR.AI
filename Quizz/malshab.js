@@ -9,6 +9,6 @@ export const malshab = {
     Profile : 0,
     Frequency : "",
     Gym_access : "",
-    Unit : ""
+    Unit : "",
 }
 
