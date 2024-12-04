@@ -1,28 +1,7 @@
 
-// const prompt = "Explain how AI works";
 
 import { malshab } from "./malshab.js";
 const newMalshab = { ...malshab }
-// const ageContainer = document.getElementById('age-container')
-// const ageOptionOne = document.getElementById('age-option-one')
-// const ageOptionTwo = document.getElementById('age-option-two')
-// ifageOptionOne.addEventListener('click', () => {
-//     newMalshab.Age = ageOptionOne.textContent;
-//     console.log(newMalshab.Age)
-//     ageContainer.style.display = 'none'
-
-// }) 
-
-
-
-// ageOptionTwo.addEventListener('click', () => {
-//     newMalshab.Age = ageOptionTwo.textContent;
-//     console.log(newMalshab.Age)
-//     ageContainer.style.display = 'none'
-
-
-// })
-
 const ageOptions = document.querySelectorAll('#age-container button');
 const ageContainer = document.getElementById('age-container')
 const heightOptions = document.querySelectorAll('#height-container button');
@@ -31,7 +10,6 @@ const weightOptions = document.querySelectorAll('#weight-container button')
 const weightContainer = document.getElementById('weight-container')
 const backgroundOptions = document.querySelectorAll('#background-container button')
 const backgroundContainer = document.getElementById('background-container')
-
 const workoutOptions = document.querySelectorAll('#workout-container button');
 const workoutContainer = document.getElementById('workout-container')
 const profileOptions = document.querySelectorAll('#profile-container button')
