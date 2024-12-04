@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="mainGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A5D3F"/>
+      <stop offset="100%" style="stop-color:#2F3E29"/>
+    </linearGradient>
+    <linearGradient id="techOverlay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9BB98A" stop-opacity="0.2"/>
+      <stop offset="100%" style="stop-color:#9BB98A" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Simple Clean Background -->
+  <rect width="60px" height="300" fill="#FAFBF9" opacity="0.1"/>
+
+  <!-- Clean Modern Shield -->
+  <path d="M200 60
+           L280 100
+           C280 180, 250 220, 200 250
+           C150 220, 120 180, 120 100
+           L200 60Z"
+        fill="url(#mainGreen)"/>
+
+  <!-- Tech Overlay -->
+  <path d="M200 70
+           L270 105
+           C270 175, 245 210, 200 235
+           C155 210, 130 175, 130 105
+           L200 70Z"
+        fill="url(#techOverlay)"
+        stroke="#9BB98A"
+        stroke-width="1"/>
+
+  <!-- Star of David -->
+  <g transform="translate(200 155) scale(0.9)">
+    <!-- First Triangle -->
+    <path d="M0,-30 L26,15 L-26,15 Z" 
+          fill="none" 
+          stroke="#9BB98A" 
+          stroke-width="3"/>
+    <!-- Second Triangle -->
+    <path d="M0,30 L-26,-15 L26,-15 Z" 
+          fill="none" 
+          stroke="#9BB98A" 
+          stroke-width="3"/>
+  </g>
+
+  <!-- Minimal Circuit Lines -->
+  <g stroke="#A5B88F" stroke-width="1.5" opacity="0.6">
+    <path d="M140 120 L170 120" fill="none"/>
+    <path d="M230 120 L260 120" fill="none"/>
+    <path d="M140 190 L170 190" fill="none"/>
+    <path d="M230 190 L260 190" fill="none"/>
+  </g>
+
+  <!-- Clean Connection Points -->
+  <g fill="#9BB98A">
+    <circle cx="140" cy="120" r="2"/>
+    <circle cx="170" cy="120" r="2"/>
+    <circle cx="230" cy="120" r="2"/>
+    <circle cx="260" cy="120" r="2"/>
+    <circle cx="140" cy="190" r="2"/>
+    <circle cx="170" cy="190" r="2"/>
+    <circle cx="230" cy="190" r="2"/>
+    <circle cx="260" cy="190" r="2"/>
+  </g>
+
+  <!-- Modern Typography -->
+  <text x="200" y="280" 
+        font-family="Arial, sans-serif" 
+        font-weight="700" 
+        font-size="28" 
+        text-anchor="middle" 
+        letter-spacing="1">
+    <tspan fill="#4A5D3F">WARRIOR</tspan>
+    <tspan fill="#9BB98A">.AI</tspan>
+  </text>
+</svg>
