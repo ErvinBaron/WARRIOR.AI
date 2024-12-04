@@ -1,7 +1,7 @@
 
 
 import { malshab } from "./malshab.js";
-export const newMalshab = { ...malshab }
+ const newMalshab = { ...malshab }
 const ageOptions = document.querySelectorAll('#age-container button');
 const ageContainer = document.getElementById('age-container')
 const heightOptions = document.querySelectorAll('#height-container button');
@@ -109,6 +109,10 @@ unitOptions.forEach(options => {
     options.addEventListener('click', (unitEvent) => {
         newMalshab.Unit = unitEvent.target.textContent
         unitContainer.style.display = 'flex';
+        const finish = document.createElement('button')
+        unitContainer.appendChild(finish)
+        finish.textContent = 'Finish Quizz'
+        unitOptions.style.display = 'none'
         console.log(newMalshab)
     })
 })
@@ -116,4 +120,4 @@ unitOptions.forEach(options => {
 
 
 
-
+localStorage.setItem('JSON', JSON.stringify(newMalshab))

@@ -10,9 +10,11 @@ button {
   height: 10%;
 }
 
+
 .button-height {
   height: 25%;
 }
+
 
 #hero-main {
   display: flex;
@@ -26,8 +28,27 @@ button {
   width: 100vw;
   height: 80px;
 }
-a:link {
-  text-decoration: none;
+
+#nav{
+    width: 100vw;
+    height: 80px;
+}
+.containers{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+    padding: 2%;
+    gap: 2%;
+    
+}
+.title{
+    font-size: 60px;
+    margin-bottom: 5%;
+
 }
 
 a:visited {
