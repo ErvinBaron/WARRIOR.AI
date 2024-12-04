@@ -27,6 +27,7 @@
   background-color: olivedrab;
   color: white;
   border-radius: 15px;
+  z-index: 10;
 }
 #main {
   display: flex;
@@ -123,4 +124,3 @@
     font-size: 12px;
   }
 }
-
