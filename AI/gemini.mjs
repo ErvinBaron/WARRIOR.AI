@@ -1,77 +1,121 @@
-import dotenv from "dotenv";
+// import "dotenv/config.js";
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
-
-dotenv.config();
+// import { newMalshab } from "../Quizz/quizzscript";
 
 // test variables:
-const userData = {
-  age: 18,
-  height: 176,
-  weight: 87,
-  injury: "knee injury 3 years ago",
-  CurrentActivity: "basketball 1 time a week for 2 hours",
-  wantTo: "669",
-  eatingHabits: "alot of carbs",
-  timeLeft: "2 days",
-  profile: 42,
-  haveAccess: "gym",
-};
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const userData = {
+  Age: 18,
+  Height: 176,
+  Weight: 87,
+  Background: "basketball 1 time a week for 2 hours",
+  Unit: "Givati",
+  Frequency: "3 days",
+  Profile: 42,
+  Gym_access: "gym",
+};
+localStorage.setItem("JSON1", JSON.stringify(userData));
+console.log(JSON.parse(localStorage.getItem("JSON1")));
+
+const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
+const generationConfig = {
+  temperature: 0.9,
+  topK: 1,
+  topP: 1,
+  maxOutputTokens: 2048,
+  response_mime_type: "application/json",
+};
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 async function generateResponse(user) {
   try {
-    const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box 
-    as an element in code. use clear and concise keys, suchs as days of the week and topics. it should be 
-    include the keys: age, height, weight, Injuries, Current-activity, unit, eating-habit, free-time,army-profile,
-    Gym-access,excercise-routine. open and close the answer with {} and add no other element before or after. user under score "_" instead of "-".
-    I am a potential israeli army recruit, assume when talking that when i say profile
-     i mean it as a health classification in the army. and that i live in israel. our work week begin 
-     in sunday and ends in saturday, saturday is a rest day and no activity is allowed. assume i am a
-     student, my school begine around 8am and ends in around 2pm.
-     incude a short summery about the requirements and specific mental and physical challenges that the ${user.wantTo} entails
-i am ${user.age}, my height is ${user.height} and my weight is ${user.weight} kg. my goal is to reach the unit "${user.wantTo}"
- my current workouts are ${user.CurrentActivity}. i have time for ${user.timeLeft} more days for working out. my army profile is ${user.profile}
-  is ${user.wantTo}, and i have access to a ${user.haveAccess}. prepare a workout routine centered around prospering in my chosen
-   unit, center it around the most important physical aspect of the rule. make sure the workouts provided are as explained as possible
-    ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity, `;
-    const result = await model.generateContent(prompt);
-    // console.log(result.response.text());
+    const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box as an element in code.
+     use clear and concise keys, suchs as days of the week and topics. 
+     open and close the answer with {} and add no other element or letter before or after.
+     use under score "_" instead of "-". make sure all the object keys are of the following:"age","height,"weight","unit"
+     I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
+     assume i am a student, my school begine around 8am and ends in around 2pm.
+     incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
+    i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
+    my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
+    my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
+     important physical aspect of the rule. make sure the workouts provided are as explained as possible
+     ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
+    const result = await model.generateContent(prompt, generationConfig);
+    console.log(result.response.text());
     return result.response.text();
   } catch (error) {
     console.error(error);
   }
 }
-const button = document.getElementById("generatebutton");
-const genAIdiv = document.getElementById("genAIresponse");
-
+const button = document.getElementById("genratebutton");
+const genAIdiv = document.getElementById("result");
 
 button.addEventListener("click", async function () {
   const response = await generateResponse(userData);
-  console.log(response.replace("javascript", '').replace(" const", ""))
-  let dataobject = response.replace("javascript", '').replace(" const", "")
+  console.log(
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
+  );
+  let dataobject = response
+    .replace("javascript", "")
+    .replace(" const", "")
+    .replaceAll("`", "");
+
   let Userobject = await JSON.parse(dataobject);
   const responsedata = {
-    age: Userobject.age,
-    weight: Userobject.weight,
-    height: Userobject.height,
-    unit:Userobject.unit,
+    age: Userobject.personal_info.age,
+    weight: Userobject.personal_info.weight,
+    height: Userobject.personal_info.height,
+    unit: Userobject.unit,
     injuries: Userobject.injuries,
-    currentActivity: Userobject.Current_activity,
-    routine: Userobject.excercise_routine,
+    currentActivity: Userobject.exercise_background,
+    routine: Userobject.exercise_routine,
     eatingHabits: Userobject.eating_habit,
     freeTime: Userobject.free_time,
     profile: Userobject.army_profile,
     gymAccess: Userobject.Gym_access,
-  }
-  console.log(responsedata)
-  // .routine.Friday.description
-
-
-  genAIdiv.textContent = "your AI generated excercis for friday are:" + responsedata.routine.Friday.description;
-
+  };
+  console.log(responsedata);
 });
-// generateResponse(userData);
+// .routine.Friday.description
+
+//   genAIdiv.textContent =
+//     "your AI generated excercis for friday are:" +
+//     responsedata.routine.friday;
+// });
+// // generateResponse(userData);
 // run this:
 //  node --env-file=.env.local gemini.js
+
+const unitArray = {
+  Golani: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Golani: `<iframe width="560" height="315" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Givati: `<iframe width="560" height="315" src="https://www.youtube.com/embed/9VDsks7hO2I?si=majAgp8hVjU_CrAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Givati: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/9VDsks7hO2I?si=majAgp8hVjU_CrAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Shayetet13: `<iframe width="560" height="315" src="https://www.youtube.com/embed/r9hCa2wg0c8?si=SdJ_KFHn4RubXVJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Duvdevan: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Hpp8iBdzrJw?si=AOrGvTaOpXdhORhz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Maglan: `<iframe width="560" height="315" src="https://www.youtube.com/embed/aeoAg84FL7A?si=HmL3-cssWYP8x87T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Pilot: `<iframe width="560" height="315" src="https://www.youtube.com/embed/MZimWcaYPwY?si=vQQKjo7C0L6hBsic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Oketz: `<iframe width="560" height="315" src="https://www.youtube.com/embed/x9QBzaOCeQo?si=Nj17omZT505md3GQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Egoz: `<iframe width="560" height="315" src="https://www.youtube.com/embed/jhio6VHP3U0?si=Zm6eLt2vzQ1SltbF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_Nahal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G0zF4CG2ENo?si=o0XofMsT0Baupsuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Kfir: `<iframe width="560" height="315" src="https://www.youtube.com/embed/4x670n72k14?si=9twCIDAxKah2Ly11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Tzanhanim: `<iframe width="560" height="315" src="https://www.youtube.com/embed/-wOJeT8l6Ww?si=JrS249u_Atnxl5sJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Nahal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G0zF4CG2ENo?si=o0XofMsT0Baupsuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  Sayeret_matkal: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6hFHRoKkNII?si=ktBcgXOU02OZLkOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+};
+const videoBox = document.getElementById("unitVideo");
+let found = false;
+
+for (let key in unitArray) {
+  if (key == userData.Unit) {
+    videoBox.innerHTML = unitArray[key];
+    found = true; // Mark as found
+    break; // Stop the loop
+  }
+}
+
+if (!found) {
+  // Default content if no match is found
+  videoBox.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/yGHp8u7iE4s?si=neg1cnhiW8KOzkxg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+}

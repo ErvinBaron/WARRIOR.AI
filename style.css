@@ -1,7 +1,7 @@
-
 body {
   margin: 0;
   padding: 0;
+  background-image: url("/images/military-pattern-wider.svg");
 }
 .navbar {
   width: 100vw;
@@ -13,10 +13,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 #name {
   font-size: 35px;
   color: white;
+}
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: black;
 }
 #warrior-logo {
   width: 80px;
@@ -28,6 +35,8 @@ body {
 .container {
   width: 150px;
   height: 80px;
+  position: relative;
+  z-index: 10;
 }
 .btn {
   background-color: rgb(75, 75, 23);
@@ -101,4 +110,6 @@ body {
   height: 40vh;
   width: 100vw;
   background-color: olive;
+  display: flex;
+  justify-content: space-between;
 }

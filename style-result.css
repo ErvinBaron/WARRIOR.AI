@@ -1,0 +1,31 @@
+* {
+  border: red solid 1px;
+}
+#result {
+  padding-top: 5vw;
+  width: 90vw;
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#unitVideo {
+  width: 40vw;
+  height: 22.5vw;
+}
+#unitDescription {
+  width: 40vw;
+  height: 30vw;
+  text-align: center;
+  color: black;
+}
+#main {
+  position: relative;
+  top: 80px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+#footer {
+  position: relative;
+}
