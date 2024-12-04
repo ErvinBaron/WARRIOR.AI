@@ -9,7 +9,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
 }
 #vid {
   width: 100%;
@@ -27,13 +27,18 @@
   background-color: olivedrab;
   color: white;
   border-radius: 15px;
+  z-index: 10;
 }
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("/images/military-pattern-wider.svg");
+  padding-top: 20vh;
+  gap: 2vw;
+}
+li {
+  font-size: 14px;
 }
 #personalization-pargraph,
 #weekly-program-paragraph,
@@ -42,9 +47,11 @@
   background-color: olivedrab;
   color: white;
   border-radius: 22px;
-  /* overflow: hidden; */
-  width: 30vw;
-  height: 25vh;
+  width: 35vw;
+  height: auto;
+  opacity: 0.75;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding: 2vw;
 }
 #Personalized,
 #weekly-program,
@@ -54,7 +61,7 @@
   align-items: center;
   justify-content: space-around;
   width: 85vw;
-  height: 35vw;
+  height: auto;
 }
 #image3 {
   border: solid red 1px;
@@ -70,6 +77,16 @@
   border-radius: 50px;
 }
 @media (max-width: 1000px) {
+  li {
+    font-size: 10px;
+  }
+  #personalization-pargraph,
+  #weekly-program-paragraph,
+  #dietry-program-paragraph,
+  #requirements-paragraph {
+    width: 40vw;
+    padding: 0;
+  }
   #Personalized h2,
   #weekly-program h2,
   #dietry-program h2,
@@ -88,8 +105,17 @@
   #image4 {
     border-radius: 25px;
   }
+  #main {
+    padding-top: 15vh;
+  }
 }
 @media (max-width: 640px) {
+  #personalization-pargraph,
+  #weekly-program-paragraph,
+  #dietry-program-paragraph,
+  #requirements-paragraph {
+    width: 44vw;
+  }
   #Personalized h2,
   #weekly-program h2,
   #dietry-program h2,
@@ -108,6 +134,12 @@
   #image4 {
     border-radius: 20px;
   }
+  #main {
+    padding-top: 15vh;
+  }
+  #footer {
+    flex-wrap: wrap;
+  }
 }
 @media (max-width: 640px) {
   #Personalized h2,
@@ -123,4 +155,3 @@
     font-size: 12px;
   }
 }
-
