@@ -19,7 +19,7 @@ console.log(JSON.parse(localStorage.getItem("JSON1")))
 
 const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
 const generationConfig = {	
-    temperature: 0.9,
+    temperature: 2,
 	topK: 1,
 	topP: 1,
 	maxOutputTokens: 2048,
@@ -39,7 +39,7 @@ async function generateResponse(user) {
     i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
     my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
     my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
-     important physical aspect of the rule. make sure the workouts provided are as explained as possible
+     important physical aspect of the rule. make sure the workouts provided are as explained as possible.
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt,generationConfig);
     console.log(result.response.text());
@@ -58,26 +58,21 @@ button.addEventListener("click", async function () {
 
   let Userobject = await JSON.parse(dataobject);
   const responsedata = {
-    age: Userobject.personal_info.age,
-    weight: Userobject.personal_info.weight,
-    height: Userobject.personal_info.height,
+    age: Userobject.age,
+    weight: Userobject.weight,
+    height: Userobject.height,
     unit: Userobject.unit,
-    injuries: Userobject.injuries,
     currentActivity: Userobject.exercise_background,
     routine: Userobject.exercise_routine,
-    eatingHabits: Userobject.eating_habit,
-    freeTime: Userobject.free_time,
     profile: Userobject.army_profile,
-    gymAccess: Userobject.Gym_access,
+    unitSummery: Userobject.unit_summary
   };
   console.log(responsedata);
+  genAIdiv.textContent ="your AI generated excercis for friday are:" + responsedata.age;
 })
   // .routine.Friday.description
 
-//   genAIdiv.textContent =
-//     "your AI generated excercis for friday are:" +
-//     responsedata.routine.friday;
-// });
+
 // // generateResponse(userData);
 // run this:
 //  node --env-file=.env.local gemini.js
