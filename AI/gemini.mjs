@@ -95,7 +95,7 @@ async function generateAI() {
   unitsummerydiv.innerHTML = `${unitsummery}`;
   unitsummerydiv.style.fontSize = "18px";
 
-  function typeWriter(element, text, speed = 75) {
+  function typeWriter(element, text, speed = 25) {
     let i = 0;
     function type() {
       if (i < text.length) {
@@ -106,6 +106,7 @@ async function generateAI() {
     }
     type();
   }
+
   // unitsummerydiv.innerHTML = `${unitsummery}`;
   typeWriter(unitsummerydiv, `${unitsummery}`);
   typeWriter(sunday, `${Userobject["routine"].sunday.description}`);
