@@ -40,7 +40,8 @@ const generationConfig = {
 
 async function generateResponse(user) {
   try {
-    const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box as an element in code.
+    const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box
+     as an element in code.
      use clear and concise keys, suchs as days of the week and topics. 
      open and close the answer with {} and add no other element or letter before or after.
      use under score "_" instead of "-". make sure all the object keys are of the following:
@@ -84,7 +85,7 @@ async function generateAI() {
     unitsummerydiv.textContent = `analysing your future...`;
   }, 4 * 1000);
 
-  
+
   const response = await generateResponse(userData);
   console.log(
     response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
