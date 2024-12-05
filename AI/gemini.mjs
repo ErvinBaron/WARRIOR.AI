@@ -64,11 +64,10 @@ async function generateResponse(user) {
 
 async function generateAI() {
   unitsummerydiv.textContent = `generating response`;
-      unitsummerydiv.style.fontSize = "30px"
+  unitsummerydiv.style.fontSize = "30px";
 
   setTimeout(() => {
     unitsummerydiv.textContent = `triangulating all possibilities`;
-
   }, 1 * 1000);
   setTimeout(() => {
     unitsummerydiv.textContent = `looking for data`;
@@ -80,7 +79,6 @@ async function generateAI() {
     unitsummerydiv.textContent = `analysing your future...`;
   }, 4 * 1000);
 
-  
   const response = await generateResponse(userData);
   console.log(
     response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
@@ -95,18 +93,36 @@ async function generateAI() {
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
   unitsummerydiv.innerHTML = `${unitsummery}`;
-        unitsummerydiv.style.fontSize = "18px"
+  unitsummerydiv.style.fontSize = "18px";
 
-  sunday.textContent = `${Userobject["routine"].sunday.description}`;
-  monday.textContent = `${Userobject["routine"].monday.description}`;
-  tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
-  thursday.textContent =  `${Userobject["routine"].thursday.description}`;
-  wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
-  friday.textContent = `${Userobject["routine"].friday.description}`;
-  saturday.textContent = `${Userobject["routine"].saturday.description}`;
+  function typeWriter(element, text, speed = 75) {
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+  // unitsummerydiv.innerHTML = `${unitsummery}`;
+  typeWriter(unitsummerydiv, `${unitsummery}`);
+  typeWriter(sunday, `${Userobject["routine"].sunday.description}`);
+  typeWriter(monday, `${Userobject["routine"].monday.description}`);
+  typeWriter(tuesday, `${Userobject["routine"].tuesday.description}`);
+  typeWriter(thursday, `${Userobject["routine"].thursday.description}`);
+  typeWriter(wednesday, `${Userobject["routine"].wednesday.description}`);
+  typeWriter(friday, `${Userobject["routine"].friday.description}`);
+  typeWriter(saturday, `${Userobject["routine"].saturday.description}`);
 
-
-  
+  // sunday.textContent = `${Userobject["routine"].sunday.description}`;
+  // monday.textContent = `${Userobject["routine"].monday.description}`;
+  // tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
+  // thursday.textContent = `${Userobject["routine"].thursday.description}`;
+  // wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
+  // friday.textContent = `${Userobject["routine"].friday.description}`;
+  // saturday.textContent = `${Userobject["routine"].saturday.description}`;
 }
 window.onload = generateAI();
 
