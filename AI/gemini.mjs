@@ -63,19 +63,22 @@ async function generateResponse(user) {
 }
 
 async function generateAI() {
-  unitsummerydiv.innerHTML = `generating response`;
+  unitsummerydiv.textContent = `generating response`;
+  unitsummerydiv.style.fontSize = "30px";
+
   setTimeout(() => {
-    unitsummerydiv.innerHTML = `triangulating all possibilities`;
+    unitsummerydiv.textContent = `triangulating all possibilities`;
   }, 1 * 1000);
   setTimeout(() => {
-    unitsummerydiv.innerHTML = `looking for data`;
+    unitsummerydiv.textContent = `looking for data`;
   }, 2 * 1000);
   setTimeout(() => {
-    unitsummerydiv.innerHTML = `searching for FREEDOM`;
+    unitsummerydiv.textContent = `searching for FREEDOM`;
   }, 3 * 1000);
   setTimeout(() => {
-    unitsummerydiv.innerHTML = `analysing your future...`;
+    unitsummerydiv.textContent = `analysing your future...`;
   }, 4 * 1000);
+
   const response = await generateResponse(userData);
   console.log(
     response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
@@ -89,6 +92,8 @@ async function generateAI() {
 
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
+  unitsummerydiv.innerHTML = `${unitsummery}`;
+  unitsummerydiv.style.fontSize = "18px";
 
   function typeWriter(element, text, speed = 75) {
     let i = 0;
