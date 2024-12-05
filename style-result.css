@@ -1,10 +1,10 @@
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 #result {
-  padding-top: 2vw;
+  /* padding-top: 2vw; */
   width: 90vw;
-  height: 50vw;
+  height: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,11 @@
 #unitDescription {
   width: 45vw;
   height: 30vw;
-  text-align: center;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
 }
 #main {
   top: 80px;
@@ -36,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 #dailyRutine {
   display: flex;
@@ -54,6 +58,10 @@
   width: 100vw;
   height: 30vw;
 }
+#titlediv {
+  position: relative;
+  top: 80px;
+}
 #sunday,
 #monday,
 #thursday,
@@ -62,4 +70,75 @@
 #friaday {
   width: 60vw;
   height: 8vw;
+}
+#unitDiet {
+  display: none;
+}
+h1,
+h3 {
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  #result {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  #titlediv {
+    top: 0px;
+  }
+  #unitVideo {
+    width: 80vw;
+    height: 45vw;
+  }
+  #unitDescription {
+    width: 80vw;
+    height: auto;
+  }
+  #unitexercize {
+    flex-wrap: wrap;
+    /* padding-bottom:2vw ; */
+    width: 90%;
+    height: auto;
+    /* flex-direction: column; */
+    justify-content: none;
+    align-items: none;
+  }
+  #sunday,
+  #monday,
+  #thursday,
+  #tuesday,
+  #wednesday,
+  #friaday {
+    width: 80vw;
+    height: auto;
+    padding-bottom: 5vw;
+  }
+  #dailyRutine {
+    position: relative;
+    width: 90vw;
+    height: auto;
+  }
+  #dailyGraph {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  /* footer {
+    position: fixed;
+    bottom: 0;
+  } */
+  #main {
+    position: relative;
+    top: 80px;
+  }
+}
+@media (max-width: 640px) {
+}
+@media (max-width: 640px) {
 }
