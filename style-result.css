@@ -10,12 +10,13 @@
   align-items: center;
 }
 #unitVideo {
-  width: 20%;
-  height: 22.5vw;
-  overflow: hidden;
+
+  width: 45vw;
+  height: 25.3125vw;
+
 }
 #unitDescription {
-  width: 40vw;
+  width: 45vw;
   height: 30vw;
   text-align: center;
   color: black;
