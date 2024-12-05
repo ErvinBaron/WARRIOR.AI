@@ -1,14 +1,32 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   border: 1px solid red;
-}
+} */
 button {
   cursor: pointer;
   font-size: 30px;
-  width: 60%;
+  width: 40%;
   height: 10%;
+  background-color: black;
+  color: white;
+  opacity: 0;
+    animation:  titleBtn 0.7s ease-in-out forwards;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: color 0.3s ease, color 0.3 ease;
 }
+
+button:hover{
+background-color: wheat;
+transform: translateY(-7px);
+color: black;
+
+}
+
+body{
+    background: white
+}
+
 a{
     width: 30%;
     height: 20%;
@@ -48,8 +66,54 @@ a{
 .title{
     font-size: 60px;
     margin-bottom: 5%;
-
+    color: white;
+    opacity: 0;
+    animation:  titleBtn 1s ease-in-out forwards;
 }
+
+
+@keyframes titleBtn{
+
+    0%{
+        opacity: 0;
+    }
+    
+    
+
+    100%{
+        opacity: 1;
+
+    }
+}
+
+#age{
+
+    animation:  ageAnimation 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+#age-option-one{
+    animation:  ageAnimation 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+#age-option-two{
+    animation:  ageAnimation 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+
+
+@keyframes ageAnimation{
+
+    0%{
+        opacity: 0;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+}
+
+
 
 a:visited {
   text-decoration: none;
@@ -65,20 +129,57 @@ a:hover {
   margin-right: 20px;
 }
 .containers {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  height: 70%;
-  justify-content: start;
-  text-align: center;
-  align-items: center;
-  padding: 2%;
-  gap: 2%;
-  
+    display: flex
+    ;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: start;
+        text-align: center;
+        align-items: center;
+        padding: 2%;
+        position: relative;
+        gap: 4%;
+        background: linear-gradient(to right, rgb(75, 75, 23), rgb(75, 75, 23) -4%, /* הצבע מתחיל ונמשך עד 30% */ black 40%, /* שחור מתחיל ב-40% */ black 60%, /* שחור נמשך עד 60% */ rgb(75, 75, 23) 102%, /* הצבע חוזר ב-70% */ rgb(75, 75, 23));
+        top: 80px;
+
 }
+
+#age-container{
+
+    background: linear-gradient(to right, rgb(75, 75, 23), rgb(75, 75, 23) -4%, /* הצבע מתחיל ונמשך עד 30% */ black 40%, /* שחור מתחיל ב-40% */ black 60%, /* שחור נמשך עד 60% */ rgb(75, 75, 23) 102%, /* הצבע חוזר ב-70% */ rgb(75, 75, 23));
+
+    animation : ageContainer 1s ease-in-out forwards ;
+
+
+}
+
+@keyframes ageContainer{
+
+0%{
+    transform: scaleX(0%);
+}
+
+75%{
+    transform: scaleX(120%);
+}
+
+100%{
+    transform: scaleX(100%);
+}
+
+}
+
+
+
+
+
+
+
 .title {
   font-size: 60px;
   margin-bottom: 5%;
+  color : white
 }
 
 #age-container {
