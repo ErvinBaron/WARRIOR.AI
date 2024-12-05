@@ -10,8 +10,9 @@
   align-items: center;
 }
 #unitVideo {
-  width: 40vw;
+  width: 20%;
   height: 22.5vw;
+  overflow: hidden;
 }
 #unitDescription {
   width: 40vw;
