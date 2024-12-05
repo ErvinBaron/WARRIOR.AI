@@ -21,7 +21,7 @@ async function generateResponse(user) {
      use clear and concise keys, suchs as days of the week and topics. 
      open and close the answer with {} and add no other element or letter before or after.
      use under score "_" instead of "-". make sure all the object keys are of the following:
-     "age","height,"weight","unit","profile","unitSummery", "currentActivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
+     "age","height,"weight","unit","profile","unitsummery", "currentactivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
      I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
      assume i am a student, my school begine around 8am and ends in around 2pm.
      incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
@@ -76,7 +76,7 @@ async function generateAI() {
   let Userobject = await JSON.parse(dataobject);
 
   console.log(Userobject["routine"].sunday);
-  const unitsummery = Userobject.unit_summery | userData.unitSummery;
+  const unitsummery = Userobject.unitsummery
   console.log(unitsummery, Userobject.unit_summery,Userobject.unitSummery)
 
   unitsummerydiv.innerHTML = `${unitsummery}`;
