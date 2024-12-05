@@ -10,10 +10,8 @@
   align-items: center;
 }
 #unitVideo {
-
   width: 45vw;
   height: 25.3125vw;
-
 }
 #unitDescription {
   width: 45vw;
@@ -33,10 +31,35 @@
   position: relative;
 }
 #unitexercize {
-  width: 100vw;
-  height: 30vw;
+  width: 90vw;
+  height: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#dailyRutine {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 54vw;
+}
+#dailyGraph {
+  width: 30vw;
+  height: 60vw;
+}
+#piechart {
+  background-color: rgba(240, 248, 255, 0);
 }
 #unitDiet {
   width: 100vw;
   height: 30vw;
+}
+#sunday,
+#monday,
+#thursday,
+#tuesday,
+#wednesday,
+#friaday {
+  width: 60vw;
+  height: 8vw;
 }

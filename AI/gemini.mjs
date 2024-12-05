@@ -56,7 +56,6 @@ async function generateResponse(user) {
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
 
-
     console.log(result.response.text());
 
     return result.response.text();
@@ -72,29 +71,24 @@ async function generateAI() {
   unitsummerydiv.innerHTML = `generating response`;
   setTimeout(() => {
     unitsummerydiv.innerHTML = `triangulating all possibilities`;
-
-  }, 1*1000);
+  }, 1 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `looking for data`;
-
-  }, 2*1000);
+  }, 2 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `searching for FREEDOM`;
-
-  }, 3*1000);
+  }, 3 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `analysing your future...`;
-
-  }, 4*1000);
+  }, 4 * 1000);
   const response = await generateResponse(userData);
   console.log(
-
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", ""))
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
+  );
   let dataobject = await response
     .replace("javascript", "")
     .replace(" const", "")
     .replaceAll("`", "");
-
 
   let Userobject = await JSON.parse(dataobject);
 

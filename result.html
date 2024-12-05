@@ -6,11 +6,15 @@
     <title>Get Ready</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style-result.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
   </head>
 
   <body>
     <nav class="navbar">
-      <div class="container">
+      <div class="containerDrop">
         <button class="btn" id="btn">
           Dropdown
           <i class="bx bx-chevron-down" id="arrow"></i>
@@ -21,9 +25,9 @@
             <i class="bx bx-plus-circle"></i>
             Home page
           </a>
-          <a href="#about">
+          <a href="/Quizz/quizz.html">
             <i class="bx bx-book"></i>
-            About
+            Start Quiz
           </a>
           <a href="/result.html">
             <i class="bx bx-folder"></i>
@@ -49,7 +53,20 @@
         </div>
       </div>
 
-      <div id="unitexercize"></div>
+      <div id="unitexercize">
+        <div id="dailyRutine">
+          <div id="sunday">1</div>
+          <div id="monday">2</div>
+          <div id="tuesday">3</div>
+          <div id="thursday">4</div>
+          <div id="wednesday">5</div>
+          <div id="friday">6</div>
+        </div>
+        <div id="dailyGraph">
+          <div id="piechart" style="width: 30vw; height: 30vw"></div>
+          <div id="chart_div" style="width: 30vw; height: 30vw"></div>
+        </div>
+      </div>
 
       <div id="unitDiet"></div>
     </div>
@@ -170,8 +187,51 @@
         © 2024 Your Company. All Rights Reserved.
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("difficultyChart");
 
+        if (ctx) {
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+              datasets: [
+                {
+                  label: "Daily Difficulty",
+                  data: [3, 5, 7, 9, 12, 15, 18],
+                  backgroundColor: "#708238", // Olive green
+                  borderColor: "#556b2f", // Darker olive green
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "Difficulty Level",
+                  },
+                },
+              },
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Daily Difficulty Progression",
+                },
+              },
+            },
+          });
+        } else {
+          console.error("Canvas element not found");
+        }
+      });
+    </script>
     <script src="script.js"></script>
     <script type="module" src="./AI/gemini.mjs"></script>
+    <script src="/ai/diagram.js"></script>
   </body>
 </html>
