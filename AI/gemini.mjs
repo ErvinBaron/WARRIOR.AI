@@ -1,23 +1,9 @@
 // import "dotenv/config.js";
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
-// import { newMalshab } from "../Quizz/quizzscript";
 
-// test variables:
-
-const userData = {
-  Age: 18,
-  Height: 176,
-  Weight: 87,
-  Background: "basketball 1 time a week for 2 hours",
-  Unit: "Givati",
-  Frequency: "3 days",
-  Profile: 42,
-  Gym_access: "gym",
-};
-localStorage.setItem("JSON1", JSON.stringify(userData));
-console.log(JSON.parse(localStorage.getItem("JSON1")));
-localStorage.setItem("JSON1", JSON.stringify(userData));
-console.log(JSON.parse(localStorage.getItem("JSON1")));
+const userData = JSON.parse(localStorage.getItem("DATA"));
+console.log(userData["Age"])
+console.log(userData);
 
 const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
 const generationConfig = {
@@ -35,7 +21,7 @@ async function generateResponse(user) {
      use clear and concise keys, suchs as days of the week and topics. 
      open and close the answer with {} and add no other element or letter before or after.
      use under score "_" instead of "-". make sure all the object keys are of the following:
-     "age","height,"weight","unit","profile","unitSummery", "currentActivity", "routine". the routine key should always have "activity" and "description".
+     "age","height,"weight","unit","profile","unitSummery", "currentActivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
      I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
      assume i am a student, my school begine around 8am and ends in around 2pm.
      incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
@@ -46,7 +32,9 @@ async function generateResponse(user) {
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
 
+
     console.log(result.response.text());
+
     return result.response.text();
   } catch (error) {
     console.error(error);
@@ -54,42 +42,48 @@ async function generateResponse(user) {
 }
 const button = document.getElementById("generatebutton");
 const unitsummerydiv = document.getElementById("unitDescription");
-const exercisediv = document.getElementById("unitexercise");
+const exercisediv = document.getElementById("unitexercize");
 
-button.addEventListener("click", async function () {
+
+async function generateAI() {
+  unitsummerydiv.innerHTML = `generating response`;
+  setTimeout(() => {
+    unitsummerydiv.innerHTML = `triangulating all possibilities`;
+
+  }, 1*1000);
+  setTimeout(() => {
+    unitsummerydiv.innerHTML = `looking for data`;
+
+  }, 2*1000);
+  setTimeout(() => {
+    unitsummerydiv.innerHTML = `searching for FREEDOM`;
+
+  }, 3*1000);
+  setTimeout(() => {
+    unitsummerydiv.innerHTML = `analysing your future...`;
+
+  }, 4*1000);
   const response = await generateResponse(userData);
   console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
-  );
-  let dataobject = response
+
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", ""))
+  let dataobject = await response
     .replace("javascript", "")
     .replace(" const", "")
     .replaceAll("`", "");
-  console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
-  );
+
 
   let Userobject = await JSON.parse(dataobject);
-  const responsedata = {
-    age: Userobject.age,
-    weight: Userobject.weight,
-    height: Userobject.height,
-    unit: Userobject.unit,
-    currentActivity: Userobject.exercise_background,
-    routine: Userobject.exercise_routine,
-    profile: Userobject.profile,
-    unitSummery: Userobject.unitSummary,
-  };
 
-  console.log(Userobject);
-  unitsummerydiv.innerHTML = `${Userobject.unitSummery}`;
-  exercisediv.textContent = `${Userobject.routine.sunday.description}`;
-});
-// .routine.Friday.description
+  console.log(Userobject["routine"].sunday);
+  const unitsummery = Userobject.unit-summery | userData.unitSummery;
 
-// // generateResponse(userData);
-// run this:
-//  node --env-file=.env.local gemini.js
+  unitsummerydiv.innerHTML = unitsummery;
+  exercisediv.textContent = `${Userobject["routine"].sunday.description}`;
+  
+}
+window.onload = generateAI()
+
 
 const unitArray = {
   Golani: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
