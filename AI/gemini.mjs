@@ -70,9 +70,10 @@ async function generateAI() {
   let Userobject = await JSON.parse(dataobject);
 
   console.log(Userobject["routine"].sunday);
-  const unitsummery = Userobject.unit-summery | userData.unitSummery;
+  const unitsummery = Userobject.unit_summery | userData.unitSummery;
+  console.log(unitsummery, Userobject.unit_summery,Userobject.unitSummery)
 
-  unitsummerydiv.innerHTML = unitsummery;
+  unitsummerydiv.innerHTML = `${unitsummery}`;
   exercisediv.textContent = `${Userobject["routine"].sunday.description}`;
   
 }
