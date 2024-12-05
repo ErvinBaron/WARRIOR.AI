@@ -110,6 +110,6 @@ a:hover {
   height: 40vh;
   width: 100vw;
   background-color: olive;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 }

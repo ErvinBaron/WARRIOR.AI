@@ -67,7 +67,10 @@ li {
 #image3 {
   border: solid red 1px;
 }
-
+#chart {
+  width: 40vw;
+  height: 40vw;
+}
 #image1,
 #image2,
 #image3,
