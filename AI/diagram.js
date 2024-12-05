@@ -5,12 +5,12 @@ google.charts.load("current", { packages: ["timeline"] });
 google.charts.setOnLoadCallback(drawChart);
 function drawPieChart() {
   var data = google.visualization.arrayToDataTable([
-    ["Task", "Hours per Day"],
-    ["Work", 11],
-    ["Eat", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7],
+    ["running", "Hours per Day"],
+    ["Running", 11],
+    ["Hiit", 2],
+    ["Core training", 2],
+    ["Rucking", 2],
+    ["Weight lifting", 7],
   ]);
 
   // Define pie chart options
@@ -23,6 +23,8 @@ function drawPieChart() {
       duration: 1000,
       easing: "out",
     },
+    legend: { position: "top" },
+    pieStartAngle: "0",
   };
 
   // Render the pie chart
@@ -36,7 +38,7 @@ function drawPieChart() {
 function drawAreaChart() {
   // Prepare the data for the area chart
   var data = google.visualization.arrayToDataTable([
-    ["Weeks", "averge malshab", "malshab using warrior ai"],
+    ["Weeks", "averge malshab", "using warrior.ai"],
     ["w1", 7, 6],
     ["w2", 9, 9],
     ["w3", 8, 12.5],
@@ -49,7 +51,8 @@ function drawAreaChart() {
 
   // Define area chart options
   var options = {
-    title: "Company Performance",
+    title: "Success rate",
+    legend: { position: "top" },
     hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
     vAxis: { minValue: 0 },
     backgroundColor: "transparent",
@@ -112,12 +115,42 @@ function drawChart() {
   dataTable.addColumn({ type: "date", id: "End" });
 
   dataTable.addRows([
-    ["Sunday","runnng", new Date(0, 0, 0, 14, 0, 0), new Date(0, 0, 0, 16, 0, 0)],
-    ["Monday","HIIT",new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 30, 0)],
-    ["Tuesday","weight liftting", new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 19, 30, 0)],
-    ["Wendsday","runnng", new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 0, 0)],
-    ["Thursday","aerobics", new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 30, 0)],
-    ["Firday","core",new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 30, 0)],
+    [
+      "Sunday",
+      "runnng",
+      new Date(0, 0, 0, 14, 0, 0),
+      new Date(0, 0, 0, 16, 0, 0),
+    ],
+    [
+      "Monday",
+      "HIIT",
+      new Date(0, 0, 0, 14, 30, 0),
+      new Date(0, 0, 0, 16, 30, 0),
+    ],
+    [
+      "Tuesday",
+      "weight liftting",
+      new Date(0, 0, 0, 16, 30, 0),
+      new Date(0, 0, 0, 19, 30, 0),
+    ],
+    [
+      "Wendsday",
+      "runnng",
+      new Date(0, 0, 0, 16, 30, 0),
+      new Date(0, 0, 0, 18, 0, 0),
+    ],
+    [
+      "Thursday",
+      "aerobics",
+      new Date(0, 0, 0, 14, 30, 0),
+      new Date(0, 0, 0, 16, 30, 0),
+    ],
+    [
+      "Firday",
+      "core",
+      new Date(0, 0, 0, 16, 30, 0),
+      new Date(0, 0, 0, 18, 30, 0),
+    ],
   ]);
 
   // Render the chart with the data
