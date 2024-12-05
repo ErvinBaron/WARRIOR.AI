@@ -2,7 +2,7 @@
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
 const userData = JSON.parse(localStorage.getItem("DATA"));
-console.log(userData["Age"])
+console.log(userData["Age"]);
 console.log(userData);
 
 const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
@@ -32,7 +32,6 @@ async function generateResponse(user) {
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
 
-
     console.log(result.response.text());
 
     return result.response.text();
@@ -40,51 +39,43 @@ async function generateResponse(user) {
     console.error(error);
   }
 }
-const button = document.getElementById("generatebutton");
 const unitsummerydiv = document.getElementById("unitDescription");
 const exercisediv = document.getElementById("unitexercize");
-
+const sunday = document.getElementById("sunday");
 
 async function generateAI() {
   unitsummerydiv.innerHTML = `generating response`;
   setTimeout(() => {
     unitsummerydiv.innerHTML = `triangulating all possibilities`;
-
-  }, 1*1000);
+  }, 1 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `looking for data`;
-
-  }, 2*1000);
+  }, 2 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `searching for FREEDOM`;
-
-  }, 3*1000);
+  }, 3 * 1000);
   setTimeout(() => {
     unitsummerydiv.innerHTML = `analysing your future...`;
-
-  }, 4*1000);
+  }, 4 * 1000);
   const response = await generateResponse(userData);
   console.log(
-
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", ""))
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
+  );
   let dataobject = await response
     .replace("javascript", "")
     .replace(" const", "")
     .replaceAll("`", "");
 
-
   let Userobject = await JSON.parse(dataobject);
 
   console.log(Userobject["routine"].sunday);
-  const unitsummery = Userobject.unitsummery
-  console.log(unitsummery, Userobject.unit_summery,Userobject.unitSummery)
+  const unitsummery = Userobject.unitsummery;
+  console.log(unitsummery, Userobject.unit_summery, Userobject.unitSummery);
 
   unitsummerydiv.innerHTML = `${unitsummery}`;
-  exercisediv.textContent = `${Userobject["routine"].sunday.description}`;
-  
+  sunday.textContent = `${Userobject["routine"].sunday.description}`;
 }
-window.onload = generateAI()
-
+window.onload = generateAI();
 
 const unitArray = {
   Golani: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
