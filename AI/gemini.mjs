@@ -2,7 +2,6 @@ import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
 const userData = JSON.parse(localStorage.getItem("DATA"));
 const unitsummerydiv = document.getElementById("unitDescription");
-const exercisediv = document.getElementById("unitexercize");
 const sunday = document.getElementById("sunday");
 const monday = document.getElementById("monday");
 const tuesday = document.getElementById("tuesday");
@@ -95,10 +94,13 @@ async function generateAI() {
   sunday.textContent = `${Userobject["routine"].sunday.description}`;
   monday.textContent = `${Userobject["routine"].monday.description}`;
   tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
+  thursday.textContent =  `${Userobject["routine"].thursday.description}`;
   wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
   friday.textContent = `${Userobject["routine"].friday.description}`;
   saturday.textContent = `${Userobject["routine"].saturday.description}`;
-  thursday.textContent = `${Userobject["routine"].thursday.description}`;
+
+
+  
 }
 window.onload = generateAI();
 
