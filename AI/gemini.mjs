@@ -89,18 +89,35 @@ async function generateAI() {
 
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
-  unitsummerydiv.innerHTML = `${unitsummery}`;
 
-  sunday.textContent = `${Userobject["routine"].sunday.description}`;
-  monday.textContent = `${Userobject["routine"].monday.description}`;
-  tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
-  thursday.textContent =  `${Userobject["routine"].thursday.description}`;
-  wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
-  friday.textContent = `${Userobject["routine"].friday.description}`;
-  saturday.textContent = `${Userobject["routine"].saturday.description}`;
+  function typeWriter(element, text, speed = 75) {
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+  // unitsummerydiv.innerHTML = `${unitsummery}`;
+  typeWriter(unitsummerydiv, `${unitsummery}`);
+  typeWriter(sunday, `${Userobject["routine"].sunday.description}`);
+  typeWriter(monday, `${Userobject["routine"].monday.description}`);
+  typeWriter(tuesday, `${Userobject["routine"].tuesday.description}`);
+  typeWriter(thursday, `${Userobject["routine"].thursday.description}`);
+  typeWriter(wednesday, `${Userobject["routine"].wednesday.description}`);
+  typeWriter(friday, `${Userobject["routine"].friday.description}`);
+  typeWriter(saturday, `${Userobject["routine"].saturday.description}`);
 
-
-  
+  // sunday.textContent = `${Userobject["routine"].sunday.description}`;
+  // monday.textContent = `${Userobject["routine"].monday.description}`;
+  // tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
+  // thursday.textContent = `${Userobject["routine"].thursday.description}`;
+  // wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
+  // friday.textContent = `${Userobject["routine"].friday.description}`;
+  // saturday.textContent = `${Userobject["routine"].saturday.description}`;
 }
 window.onload = generateAI();
 
