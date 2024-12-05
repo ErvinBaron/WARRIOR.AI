@@ -1,5 +1,5 @@
 * {
-  border: red solid 1px;
+  /* border: red solid 1px; */
 }
 #result {
   padding-top: 2vw;
@@ -16,7 +16,9 @@
 #unitDescription {
   width: 45vw;
   height: 30vw;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: black;
 }
 #main {
@@ -48,7 +50,6 @@
   height: 60vw;
 }
 #piechart {
-  background-color: rgba(240, 248, 255, 0);
 }
 #unitDiet {
   width: 100vw;

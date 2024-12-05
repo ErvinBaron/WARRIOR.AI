@@ -38,7 +38,6 @@ const generationConfig = {
   response_mime_type: "application/json",
 };
 
-
 async function generateResponse(user) {
   try {
     const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box as an element in code.
@@ -63,9 +62,6 @@ async function generateResponse(user) {
     console.error(error);
   }
 }
-
-
-
 
 async function generateAI() {
   unitsummerydiv.innerHTML = `generating response`;
@@ -93,21 +89,18 @@ async function generateAI() {
   let Userobject = await JSON.parse(dataobject);
 
   console.log(Userobject["routine"].sunday);
-  const unitsummery = Userobject.unitsummery
+  const unitsummery = Userobject.unitsummery;
   unitsummerydiv.innerHTML = `${unitsummery}`;
-  exercisediv.textContent = `${Userobject["routine"].sunday.description}`;
+
   sunday.textContent = `${Userobject["routine"].sunday.description}`;
   monday.textContent = `${Userobject["routine"].monday.description}`;
   tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
   wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
   friday.textContent = `${Userobject["routine"].friday.description}`;
   saturday.textContent = `${Userobject["routine"].saturday.description}`;
-  thursday.textContent =  `${Userobject["routine"]. thursday.description}`;
-  
+  thursday.textContent = `${Userobject["routine"].thursday.description}`;
 }
-window.onload = generateAI()
-
-
+window.onload = generateAI();
 
 const videoBox = document.getElementById("unitVideo");
 let found = false;
