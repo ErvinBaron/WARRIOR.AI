@@ -80,10 +80,6 @@ async function generateAI() {
     unitsummerydiv.textContent = `analysing your future...`;
   }, 4 * 1000);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c5f44d8c581b01e0a9e41a7953ba024d18168c19
   const response = await generateResponse(userData);
   console.log(
     response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
