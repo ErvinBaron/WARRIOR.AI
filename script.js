@@ -27,7 +27,8 @@ function drawChart() {
     ["M4", 51, 93],
   ]);
   var options = {
-    title: "Company Performance",
+    title: "Improvment and Success rate",
+    legend: { position: "top" },
     hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
     vAxis: { minValue: 0 },
     backgroundColor: "transparent",
