@@ -1,7 +1,6 @@
-
-/* * {
+* {
   border: red solid 1px;
-} */
+}
 
 #result {
   /* padding-top: 2vw; */
@@ -139,8 +138,25 @@ h3 {
     position: relative;
     top: 80px;
   }
+  #analytics-container {
+    flex-wrap: wrap;
+  }
 }
 @media (max-width: 640px) {
 }
 @media (max-width: 640px) {
+}
+#analytics-container {
+  width: 90vw;
+  height: 30vw;
+  display: flex;
+  align-items: center;
+}
+#timeline {
+  width: 60vw;
+  height: 30vw;
+}
+#bmi {
+  width: 30vw;
+  height: 30vw;
 }
