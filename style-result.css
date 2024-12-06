@@ -1,6 +1,6 @@
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 
 #result {
   /* padding-top: 2vw; */
@@ -37,9 +37,9 @@
 }
 #unitexercize {
   width: 90vw;
-  height: 60vw;
+  height: 125vw;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   position: relative;
 }
@@ -69,8 +69,9 @@
 #tuesday,
 #wednesday,
 #friaday {
-  width: 60vw;
-  height: 8vw;
+  padding-left: 5vw;
+  width: 50vw;
+  height: 20vw;
 }
 #unitDiet {
   display: none;
@@ -79,7 +80,10 @@ h1,
 h3 {
   text-align: center;
 }
-
+#analytics-container {
+  height: 30vw;
+  width: 30vw;
+}
 @media (max-width: 1000px) {
   #result {
     flex-wrap: wrap;
@@ -140,6 +144,8 @@ h3 {
   }
   #analytics-container {
     flex-wrap: wrap;
+    height: 30vw;
+    width: 30vw;
   }
 }
 @media (max-width: 640px) {

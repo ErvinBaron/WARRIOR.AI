@@ -39,11 +39,8 @@ const generationConfig = {
 
 async function generateResponse(user) {
   try {
-    const prompt = `your task is to provide the asked info into a javascript object, usable out-of-the-box
-     as an element in code.
-     use clear and concise keys, suchs as days of the week and topics. 
-     open and close the answer with {} and add no other element or letter before or after.
-     use under score "_" instead of "-". make sure all the object keys are of the following:
+    const prompt = `use clear and concise object keys. use under score "_" instead of "-". make sure you your answer start with "{" and end with "}", with no other text or element before or after
+     make sure all the object keys are of the following:
      "age","height,"weight","unit","profile","unitsummery", "currentactivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
      I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
      assume i am a student, my school begine around 8am and ends in around 2pm.
@@ -51,8 +48,8 @@ async function generateResponse(user) {
     i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
     my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
     my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
-     important physical aspect of the rule. make sure the workouts provided are as explained as possible.
-     ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
+     important physical aspect of the rule. make sure the workouts provided are as explained as possible. in your response make sure you give at least 120 words about each day's exercise. make then as fitting to the requirements of the chosen unit.`;
+     
     const result = await model.generateContent(prompt, generationConfig);
 
     console.log(result.response.text());
@@ -93,10 +90,9 @@ async function generateAI() {
 
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
-  unitsummerydiv.innerHTML = `${unitsummery}`;
   unitsummerydiv.style.fontSize = "18px";
-
-  function typeWriter(element, text, speed = 25) {
+  unitsummerydiv.innerHTML = "";
+  function typeWriter(element, text, speed = 4) {
     let i = 0;
     function type() {
       if (i < text.length) {
@@ -106,9 +102,8 @@ async function generateAI() {
       }
     }
     type();
-  }
 
-  // unitsummerydiv.innerHTML = `${unitsummery}`;
+  }
   typeWriter(unitsummerydiv, `${unitsummery}`);
   typeWriter(sunday, `${Userobject["routine"].sunday.description}`);
   typeWriter(monday, `${Userobject["routine"].monday.description}`);
@@ -117,6 +112,8 @@ async function generateAI() {
   typeWriter(wednesday, `${Userobject["routine"].wednesday.description}`);
   typeWriter(friday, `${Userobject["routine"].friday.description}`);
   typeWriter(saturday, `${Userobject["routine"].saturday.description}`);
+  // unitsummerydiv.innerHTML = `${unitsummery}`;
+
 
   // sunday.textContent = `${Userobject["routine"].sunday.description}`;
   // monday.textContent = `${Userobject["routine"].monday.description}`;
