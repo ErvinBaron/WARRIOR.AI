@@ -95,6 +95,7 @@ font-style: normal;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  flex-direction: column;
 }
 .daytitle {
   display: flex;
