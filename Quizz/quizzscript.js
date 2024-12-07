@@ -115,7 +115,7 @@ unitOptions.forEach(options => {
     options.addEventListener('click', (unitEvent) => {
         unitContainer.style.display = 'none';
         console.log(newMalshab)
-        if (unitEvent.target.textContent === 'Special operations') {
+        if (unitEvent.target.textContent === 'Special Operations') {
             specialUnitContainer.style.display = 'flex';
             specialUnitOptions.forEach(specialunit => {
                 specialunit.addEventListener('click', (specialUnitEvent) => {
@@ -137,7 +137,7 @@ unitOptions.forEach(options => {
             })
 
         }
-        else if (unitEvent.target.textContent === 'Sayarot') {
+        else if (unitEvent.target.textContent === 'reconnaissance (Sayarot)') {
             sayarotContainer.style.display = 'flex';
             sayarotOptions.forEach(options => {
                 options.addEventListener('click', (sayarotEvent) => {

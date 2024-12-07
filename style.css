@@ -1,19 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("/images/military-pattern-wider.svg");
+  /* background-image: url("/images/military-pattern-wider.svg"); */
 }
 .navbar {
   width: 100vw;
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: olive;
+  background: #939B4A;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
+  border-bottom: 1px solid #3B430C;
+  /* box-shadow: 0px 10px 8px #0000004A/; */
 }
 #name {
   font-size: 35px;
@@ -26,21 +28,23 @@ a:hover {
   color: black;
 }
 #warrior-logo {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 120px;
   opacity: 1;
   margin-right: 20px;
+  position: relative;
+  top: 10px;
 }
 /* Dropdown Button */
 .containerDrop {
   width: 150px;
-  height: 80px;
+  height: 60px;
   position: relative;
   z-index: 10;
+
 }
 .btn {
-  background-color: rgb(75, 75, 23);
-  color: white;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,11 +64,11 @@ a:hover {
 
 .dropdown {
   position: absolute;
-  width: 250px;
+  width: 100px;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
-  margin-top: 0.3rem;
-  background: white;
+  margin-top: 0.2rem;
+  background: #939B4A;
 }
 
 .dropdown a {
@@ -74,12 +78,12 @@ a:hover {
   padding: 0.8rem 1rem;
   text-decoration: none;
   color: black;
-  background-color: rgb(169, 169, 105);
+  background-color:#939B4A;
 }
 
 .dropdown a:hover {
-  background-color: var(--color);
-  color: white;
+  background-color: #565c28;
+  color: black;
 }
 .dropdown {
   position: absolute;
