@@ -136,31 +136,31 @@ a:hover {
   padding: 2%;
   position: relative;
   gap: 4%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgb(75, 75, 23),
     rgb(75, 75, 23) -4%,
-    /* הצבע מתחיל ונמשך עד 30% */ black 40%,
-    /* שחור מתחיל ב-40% */ black 60%,
-    /* שחור נמשך עד 60% */ rgb(75, 75, 23) 102%,
-    /* הצבע חוזר ב-70% */ rgb(75, 75, 23)
-  );
-  top: 80px;
+     black 40%,
+    black 60%,
+     rgb(75, 75, 23) 102%,
+     rgb(75, 75, 23)
+  ); */
+  top: 150px;
 }
 
-#age-container {
+/* #age-container {
   background: linear-gradient(
     to right,
     rgb(75, 75, 23),
     rgb(75, 75, 23) -4%,
-    /* הצבע מתחיל ונמשך עד 30% */ black 40%,
-    /* שחור מתחיל ב-40% */ black 60%,
-    /* שחור נמשך עד 60% */ rgb(75, 75, 23) 102%,
-    /* הצבע חוזר ב-70% */ rgb(75, 75, 23)
-  );
+    black 40%,
+     black 60%,
+     rgb(75, 75, 23) 102%,
+     rgb(75, 75, 23)
+  /* ); 
 
   animation: ageContainer 1s ease-in-out forwards;
-}
+} */
 
 @keyframes ageContainer {
   0% {
@@ -179,7 +179,7 @@ a:hover {
 .title {
   font-size: 60px;
   margin-bottom: 5%;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 #age-container {
@@ -267,24 +267,34 @@ a:hover {
   }
 }
 #progress-bar {
-  position: absolute;
-  background: olive;
+  position: relative;
+  background: #f0f0f000;
   height: 5px;
-  width: 60%;
+  width: 70%;
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
 }
+
 #progress-num {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  gap: 1vw;
+  justify-content: space-evenly;
 }
+#progress-indicator {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: olive;
+  transition: width 0.3s ease-in-out;
+}
+
 #progress-num::before {
   content: "";
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   position: absolute;
   top: 50%;
   left: 0;
@@ -292,19 +302,21 @@ a:hover {
   width: 100%;
   z-index: -1;
 }
+
 #progress-num .step {
-  border: 3px solid olive;
+  border: 4px solid olive;
   border-radius: 100%;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
+  width: 55px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   background-color: #fff;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
   z-index: 1;
 }
+
 #progress-num .step.active {
   border-color: olive;
   background-color: olive;
