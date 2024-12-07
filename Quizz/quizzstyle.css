@@ -79,7 +79,6 @@ a {
 }
 
 .title {
-  
   font-size: 35px;
   margin-bottom: 5%;
   color: white;
@@ -87,7 +86,6 @@ a {
   opacity: 0;
   animation: titleBtn 1s ease-in-out forwards;
 }
-
 
 @keyframes titleBtn {
   0% {
@@ -135,6 +133,7 @@ a:hover {
   opacity: 1;
   margin-right: 20px;
 }
+
 .containers {
   display: flex;
   flex-direction: column;
@@ -168,9 +167,6 @@ a:hover {
     transform: scaleX(100%);
   }
 }
-
-
-
 
 #age-container {
   display: flex;
@@ -212,69 +208,67 @@ a:hover {
 #finish-container {
   display: none;
 }
-@media (max-width:1276px){
-  .title{
+@media (max-width: 1276px) {
+  .title {
     font-size: 29px;
   }
 
-  button{
+  button {
     font-size: 26px;
-  width: 35%;
-  height: 9%;
+    width: 35%;
+    height: 9%;
   }
 }
-@media (max-width:1100px){
-  .title{
+@media (max-width: 1100px) {
+  .title {
     font-size: 23px;
   }
-  button{
+  button {
     font-size: 19px;
-  width: 33%;
-  height: 9%;
+    width: 33%;
+    height: 9%;
   }
-
 }
-@media (max-width:921px){
-  .title{
+@media (max-width: 921px) {
+  .title {
     margin-top: 7%;
     font-size: 20px;
   }
 }
-@media (max-width:728px){
-  .title{
+@media (max-width: 728px) {
+  .title {
     margin-top: 11%;
     font-size: 20px;
   }
 }
 
-@media (max-width:537px){
-  .title{
+@media (max-width: 537px) {
+  .title {
     margin-top: 17%;
     font-size: 20px;
   }
-  #progress-num{
+  #progress-num {
     gap: 1vw;
     width: 88%;
   }
 }
-@media (max-width:420px){
-  .title{
+@media (max-width: 420px) {
+  .title {
     margin-top: 25%;
     font-size: 17px;
   }
-  button{
+  button {
     font-size: 14px;
-  width: 33%;
-  height: 9%;
+    width: 33%;
+    height: 9%;
   }
 }
-@media (max-width:318px){
-  .title{
+@media (max-width: 318px) {
+  .title {
     margin-top: 35%;
     font-size: 14px;
   }
 }
-
 
 #progress-bar {
   position: relative;
@@ -284,6 +278,7 @@ a:hover {
   top: 70px;
   left: 50%;
   transform: translateX(-50%);
+  width: 90vw;
 }
 
 #progress-num {
@@ -293,7 +288,6 @@ a:hover {
   display: flex;
   gap: 1vw;
   justify-content: space-evenly;
-
 }
 #progress-indicator {
   position: absolute;
@@ -332,4 +326,16 @@ a:hover {
   border-color: olive;
   background-color: olive;
   color: #fff;
+}
+a image {
+  width: 50vw;
+}
+@media (max-width: 700px) {
+  a image {
+    width: 40vw;
+  }
+  #warrior-logo {
+    width: 90px;
+    height: 90px;
+  }
 }
