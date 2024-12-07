@@ -26,13 +26,24 @@ a:hover {
   color: black;
 }
 #warrior-logo {
-  width: 100px;
+  width: 120px;
   height: 120px;
   opacity: 1;
   margin-right: 20px;
   position: relative;
   top: 10px;
 }
+a image {
+  width: 50vw;
+}
+@media (max-width: 700px) {
+  a image {
+    width: 40vw;
+  }#warrior-logo {
+    width: 90px;
+    height: 90px;
+}}
+
 .containerDrop {
   width: 150px;
   height: 60px;
