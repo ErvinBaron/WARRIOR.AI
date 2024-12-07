@@ -39,7 +39,7 @@ const generationConfig = {
 
 async function generateResponse(user) {
   try {
-    const prompt = `use clear and concise object keys. use under score "_" instead of "-". make sure you your answer start with "{" and end with "}", with no other text or element before or after
+    const prompt = `use clear and concise object keys. use under score "_" instead of "-". make sure you your answer start with "{" and end with "}", with no other text or element before or after. ensure you make the result look like a json and have no lists.
      make sure all the object keys are of the following:
      "age","height,"weight","unit","profile","unitsummery", "currentactivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
      I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.

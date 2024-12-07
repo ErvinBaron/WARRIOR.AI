@@ -11,8 +11,36 @@
   align-items: center;
 }
 #unitVideo {
-  width: 45vw;
-  height: 25.3125vw;
+
+  width: 30vw;
+  height: 16vw;
+  padding-right: 9vw;
+}
+#titleTraining {
+  margin-top: 2vw;
+  width: 96vw;
+  height: 6vw;
+  display: flex;
+  justify-content: left;
+  background: linear-gradient(-135deg, transparent 4vw, #68770A 0);
+}
+#titleTraining h2 {
+  display: flex;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+#titleTraining h2 svg{
+  padding-right: 2vw;
+}
+#titleTraining h2 {
+  text-align: center;
+  padding-left: 3vw;
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+
 }
 #unitDescription {
   width: 45vw;
@@ -36,8 +64,10 @@
   position: relative;
 }
 #unitexercize {
-  width: 90vw;
-  height: 125vw;
+
+  width: 96vw;
+  height: auto;
+
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -88,7 +118,7 @@ h3 {
   #result {
     flex-wrap: wrap;
     width: 100%;
-    height: auto;
+    height: 100vw;
   }
   #titlediv {
     top: 0px;
