@@ -1,51 +1,28 @@
 /* * {
   border: red solid 1px;
 } */
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Funnel+Display:wght@300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
-.barlow-condensed-semibold {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-.barlow-condensed-regular {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 #result {
   /* padding-top: 2vw; */
-  width: 96vw;
-  height: 30vw;
+  width: 90vw;
+  height: 40vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  color: white;
-  flex-direction: row-reverse;
-  background: linear-gradient(-135deg, transparent 90px, #68770A 0);
-  MARGIN-top: 9VW;
-}
-#result h2 {
-  display: flex;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-#result h2 svg{
-  padding-left:3vw ;
-  padding-right: 2vw;
 }
 #unitVideo {
+
   width: 30vw;
   height: 16vw;
   padding-right: 9vw;
 }
 #titleTraining {
-  margin-top: 1.3vw;
+  margin-top: 2vw;
   width: 96vw;
   height: 6vw;
   display: flex;
   justify-content: left;
-  background: linear-gradient(-135deg, transparent 66px, #68770A 0);
+  background: linear-gradient(-135deg, transparent 4vw, #68770A 0);
 }
 #titleTraining h2 {
   display: flex;
@@ -63,13 +40,13 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
+
 }
 #unitDescription {
-  width: 50vw;
-  height: 10vw;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  width: 45vw;
+  height: 30vw;
+
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,33 +64,24 @@
   position: relative;
 }
 #unitexercize {
+
   width: 96vw;
-  border: 2px solid #68770A;
   height: auto;
+
   display: flex;
-  flex-direction: column;
+  /* align-items: center; */
   justify-content: center;
   position: relative;
-}
-.daytitle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 3vw;
-}
-.daytitle h3 {
-  padding-left: 2vw;
-  color: #68770A;
-  padding-top: 1vw;
 }
 #dailyRutine {
   display: flex;
   flex-direction: column;
+  width: 60vw;
   height: 54vw;
 }
 #dailyGraph {
-  /* width: 30vw; */
-  /* height: 60vw; */
+  width: 30vw;
+  height: 60vw;
 }
 #piechart {
 }
@@ -130,26 +98,10 @@
 #thursday,
 #tuesday,
 #wednesday,
-#friday{
-  padding-left: 3vw;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color:#68770A;
-  width: 96.8%;
-  height: auto;
-  padding-bottom: 2vw;
-  border-bottom: dotted 3px #68770A;
-}
-#saturday {
-  padding-left: 3vw;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #68770A;
-  width: 91vw;
-  height: auto;
-  padding-bottom: 2vw;
+#friaday {
+  padding-left: 5vw;
+  width: 50vw;
+  height: 20vw;
 }
 #unitDiet {
   display: none;
@@ -166,7 +118,7 @@ h3 {
   #result {
     flex-wrap: wrap;
     width: 100%;
-    height: auto;
+    height: 100vw;
   }
   #titlediv {
     top: 0px;
@@ -194,7 +146,7 @@ h3 {
   #tuesday,
   #wednesday,
   #friaday {
-    width: 90vw;
+    width: 80vw;
     height: auto;
     padding-bottom: 5vw;
   }
