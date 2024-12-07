@@ -1,22 +1,12 @@
 /* * {
   border: red solid 1px;
 } */
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Funnel+Display:wght@300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
-.barlow-condensed-semibold {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-.barlow-condensed-regular {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 #result {
   width: 96vw;
   height: 30vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: white;
   flex-direction: row-reverse;
@@ -34,6 +24,7 @@
   padding-right: 2vw;
 }
 #unitVideo {
+
   width: 30vw;
   height: 16vw;
   padding-right: 9vw;
@@ -62,13 +53,13 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
+
 }
 #unitDescription {
-  width: 50vw;
-  height: 10vw;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  width: 45vw;
+  height: 30vw;
+
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,11 +77,13 @@
   position: relative;
 }
 #unitexercize {
+
   width: 96vw;
   box-shadow: 0 0 0 1px #68770a, 0 0 0 1px #68770a;
   height: auto;
+
   display: flex;
-  flex-direction: column;
+  /* align-items: center; */
   justify-content: center;
   position: relative;
 }
@@ -108,6 +101,7 @@
 #dailyRutine {
   display: flex;
   flex-direction: column;
+  width: 60vw;
   height: 54vw;
 }
 #dashboard {
@@ -226,7 +220,7 @@ h3 {
   #tuesday,
   #wednesday,
   #friaday {
-    width: 90vw;
+    width: 80vw;
     height: auto;
     padding-bottom: 5vw;
   }
