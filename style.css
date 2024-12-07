@@ -36,13 +36,24 @@ a:hover {
 a image {
   width: 50vw;
 }
+@media (max-width: 1000px) {
+  #footer {
+    height: auto;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+    background-color: olive;
+  }
+}
 @media (max-width: 700px) {
   a image {
     width: 40vw;
-  }#warrior-logo {
+  }
+  #warrior-logo {
     width: 90px;
     height: 90px;
-}}
+}
+}
 
 .containerDrop {
   width: 150px;

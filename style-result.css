@@ -52,19 +52,13 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
+  color: white;
+  text-align: center;
+  padding-left: 3vw;
 }
 #titleTraining h2 svg {
   padding-right: 2vw;
 }
-#titleTraining h2 {
-  text-align: center;
-  padding-left: 3vw;
-  color: white;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
 #unitDescription {
   width: 50vw;
   height: 10vw;
@@ -126,7 +120,7 @@
 
 #Graphtitle {
   width: auto;
-  height: 10vw;
+  height: auto;
   background-color: #68770a;
   background: linear-gradient(-135deg, transparent 7vw, #68770a 0);
   display: flex;
@@ -200,6 +194,12 @@ h3 {
   height: 30vw;
   width: 30vw;
 }
+#piechart {
+
+}
+#chart_div {
+
+}
 @media (max-width: 1000px) {
   #result {
     flex-wrap: wrap-reverse;
@@ -242,6 +242,11 @@ h3 {
     width: 90vw;
     height: auto;
   }
+  #titleTraining {
+    margin-top: 2vw;
+    width: 96vw;
+    height: 10vw;
+  }
   #dailyGraph {
     width: 90%;
     height: auto;
@@ -256,23 +261,16 @@ h3 {
     position: relative;
     top: 80px;
   }
-  #analytics-container {
-    flex-wrap: wrap;
-    height: 30vw;
-    width: 30vw;
+
+  #Graphtitle {
+    height: auto;
   }
   #titleTraining {margin-bottom: vh;}
 }
 @media (max-width: 640px) {
-}
-@media (max-width: 640px) {
-}
-#analytics-container {
-  width: 90vw;
-  height: 30vw;
-  display: flex;
-  align-items: center;
-}
+
+
+
 #timeline {
   width: 60vw;
   height: 30vw;
