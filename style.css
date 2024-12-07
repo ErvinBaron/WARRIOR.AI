@@ -111,7 +111,7 @@ a:hover {
 }
 
 #footer {
-  height: 40vh;
+  height: auto;
   width: 100vw;
   background-color: olive;
   /* display: flex;

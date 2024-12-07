@@ -48,9 +48,11 @@ async function generateResponse(user) {
     i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
     my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
     my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
+
      important physical aspect of the rule. make sure the workouts provided are as explained as possible. in your response make sure you give at least 120 words about each day's exercise.
       make then as fitting to the requirements of the chosen unit.`;
      
+
     const result = await model.generateContent(prompt, generationConfig);
 
     console.log(result.response.text());
@@ -91,6 +93,7 @@ async function generateAI() {
 
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
+
   unitsummerydiv.style.fontSize = "18px";
   unitsummerydiv.innerHTML = "";
   function typeWriter(element, text, speed = 4) {
@@ -103,7 +106,6 @@ async function generateAI() {
       }
     }
     type();
-
   }
   typeWriter(unitsummerydiv, `${unitsummery}`);
   typeWriter(sunday, `${Userobject["routine"].sunday.description}`);
@@ -114,7 +116,6 @@ async function generateAI() {
   typeWriter(friday, `${Userobject["routine"].friday.description}`);
   typeWriter(saturday, `${Userobject["routine"].saturday.description}`);
   // unitsummerydiv.innerHTML = `${unitsummery}`;
-
 
   // sunday.textContent = `${Userobject["routine"].sunday.description}`;
   // monday.textContent = `${Userobject["routine"].monday.description}`;
