@@ -5,15 +5,16 @@ body {
 }
 .navbar {
   width: 100vw;
-  height: 60px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(320deg, transparent 30px, #939B4A 0) bottom right;
+  background: #939B4A;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
+  border-bottom: 1px solid #3B430C;
   /* box-shadow: 0px 10px 8px #0000004A/; */
 }
 #name {
@@ -27,8 +28,8 @@ a:hover {
   color: black;
 }
 #warrior-logo {
-  width: 90px;
-  height: 100px;
+  width: 100px;
+  height: 120px;
   opacity: 1;
   margin-right: 20px;
   position: relative;
