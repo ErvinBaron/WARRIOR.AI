@@ -250,10 +250,7 @@ h3 {
     align-items: center;
     flex-wrap: wrap;
   }
-  /* footer {
-    position: fixed;
-    bottom: 0;
-  } */
+
   #main {
     position: relative;
     top: 80px;

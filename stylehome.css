@@ -1,6 +1,4 @@
-* {
-  border: red solid 1px;
-}
+
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Funnel+Display:wght@300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
 .barlow-condensed-semibold {
   font-family: "Barlow Condensed", sans-serif;
@@ -37,7 +35,6 @@
   transform: translateX(-50%);
   background-color: rgba(222, 211, 203, 0.7);
   color: #939b4a;
-  color: #939b4a;
   border: 9px solid rgba(147, 155, 74, 1);
   border-radius: 50px;
   box-shadow: -3px 3px 6px #000000;
@@ -47,7 +44,6 @@
   color: #939b4a;
   text-shadow: -1px 1px 2px #000000;
   color: #939b4a;
-  text-shadow: -1px 1px 2px #000000;
 }
 #main {
   display: flex;
@@ -74,7 +70,7 @@
 #weekly-program-paragraph p,
 #dietry-program-paragraph p,
 #requirements-paragraph p {
-margin: 0;
+  /* margin: 0; */
 }
 #Personalized,
 #weekly-program,
@@ -86,30 +82,24 @@ margin: 0;
   width: 80vw;
   height: 20vw;
   background: #939b4a;
-  background: #939b4a;
   padding: 2vw;
 }
 #Personalized {
-  background: linear-gradient(-145deg, transparent 60px, #939b4a 0);
   background: linear-gradient(-145deg, transparent 60px, #939b4a 0);
 }
 #weekly-program {
   background: linear-gradient(145deg, transparent 60px, #939b4a 0);
 }
-#weekly-program #svg{
+#weekly-program #svg {
   display: flex;
   justify-content: right;
 }
 #dietry-program {
   background: linear-gradient(-35deg, transparent 60px, #939b4a 0);
-  background: linear-gradient(-35deg, transparent 60px, #939b4a 0);
 }
 #weekly-program-paragraph {
   padding-right: 1vw;
   padding-left: 3vw;
-}
-#image3 {
-  border: solid red 1px;
 }
 #chart2 {
   width: 100%;
@@ -122,13 +112,13 @@ margin: 0;
   height: 20vw;
   overflow: hidden;
 }
-#Personalized h2,
+/* #Personalized h2,
 #weekly-program h2,
 #dietry-program h2,
 #requirements h2 {
-  margin: 0px;
-}
-p  {
+  /* margin: 0px; 
+} */
+p {
   font-size: 20px;
 }
 h2 {
@@ -149,12 +139,12 @@ h2 {
     height: fit-content;
     width: 90vw;
   }
-p  {
-  font-size: 18px;
-}
-h2 {
-  font-size: 18px;
-}
+  p {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 18px;
+  }
   #main {
     padding-top: 15vh;
   }
@@ -171,6 +161,13 @@ h2 {
   #requirements {
     flex-wrap: wrap;
   }
+  #main {
+    margin-top: 10vh;
+    height: 65vw;
+  }
+  #image2div,#pic1, #chart2 {
+    display:none;
+  }
 }
 @media (max-width: 640px) {
   #start-button {
@@ -179,7 +176,7 @@ h2 {
     height: 70px;
     font-size: 25px;
   }
-  p  {
+  p {
     font-size: 16px;
   }
   h2 {
@@ -204,36 +201,44 @@ h2 {
   #requirements {
     font-size: 12px;
   }
-  #image1,
-  #image2,
-  #image3,
-  #image4 {
-  }
+
   #main {
-    padding-top: 15vh;
+    margin-top: 10vh;
+    height: 100vw;
   }
   #footer {
     flex-wrap: wrap;
   }
+
 }
 @media (max-width: 640px) {
+
+  #personalization-pargraph, #weekly-program-paragraph, #dietry-program-paragraph {
+    width: auto;
+  }
+  #main {
+    margin-top: 10vh;
+    height: 100vw;
+  }
+  #name img{
+    width: 40vw;
+  }
   #Personalized h2,
   #weekly-program h2,
   #dietry-program h2,
   #requirements h2 {
     font-size: 15px;
   }
-
+  #image2div,#pic1, #chart2 {
+    display:none;
+  }
   #Personalized,
   #weekly-program,
   #dietry-program,
   #requirements {
     font-size: 12px;
   }
-  #chart2 {
-    display: none;
-  }
-  p  {
+  p {
     font-size: 14px;
   }
   h2 {

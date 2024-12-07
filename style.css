@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-image: url("/images/military-pattern-wider.svg"); */
 }
 .navbar {
   width: 100vw;
@@ -9,13 +8,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #939B4A;
+  background: #939b4a;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  border-bottom: 1px solid #3B430C;
-  /* box-shadow: 0px 10px 8px #0000004A/; */
+  border-bottom: 1px solid #3b430c;
 }
 #name {
   font-size: 35px;
@@ -35,13 +33,11 @@ a:hover {
   position: relative;
   top: 10px;
 }
-/* Dropdown Button */
 .containerDrop {
   width: 150px;
   height: 60px;
   position: relative;
   z-index: 10;
-
 }
 .btn {
   background: transparent;
@@ -68,7 +64,7 @@ a:hover {
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   margin-top: 0.2rem;
-  background: #939B4A;
+  background: #939b4a;
 }
 
 .dropdown a {
@@ -78,7 +74,7 @@ a:hover {
   padding: 0.8rem 1rem;
   text-decoration: none;
   color: black;
-  background-color:#939B4A;
+  background-color: #939b4a;
 }
 
 .dropdown a:hover {
@@ -114,6 +110,4 @@ a:hover {
   height: auto;
   width: 100vw;
   background-color: olive;
-  /* display: flex;
-  justify-content: space-between; */
 }
