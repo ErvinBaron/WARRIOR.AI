@@ -161,6 +161,13 @@ h2 {
   #requirements {
     flex-wrap: wrap;
   }
+  #main {
+    margin-top: 10vh;
+    height: 65vw;
+  }
+  #image2div,#pic1, #chart2 {
+    display:none;
+  }
 }
 @media (max-width: 640px) {
   #start-button {
@@ -194,34 +201,42 @@ h2 {
   #requirements {
     font-size: 12px;
   }
-  #image1,
-  #image2,
-  #image3,
-  #image4 {
-  }
+
   #main {
-    padding-top: 15vh;
+    margin-top: 10vh;
+    height: 100vw;
   }
   #footer {
     flex-wrap: wrap;
   }
+
 }
 @media (max-width: 640px) {
+
+  #personalization-pargraph, #weekly-program-paragraph, #dietry-program-paragraph {
+    width: auto;
+  }
+  #main {
+    margin-top: 10vh;
+    height: 100vw;
+  }
+  #name img{
+    width: 40vw;
+  }
   #Personalized h2,
   #weekly-program h2,
   #dietry-program h2,
   #requirements h2 {
     font-size: 15px;
   }
-
+  #image2div,#pic1, #chart2 {
+    display:none;
+  }
   #Personalized,
   #weekly-program,
   #dietry-program,
   #requirements {
     font-size: 12px;
-  }
-  #chart2 {
-    display: none;
   }
   p {
     font-size: 14px;
