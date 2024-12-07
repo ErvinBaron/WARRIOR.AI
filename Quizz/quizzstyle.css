@@ -313,7 +313,7 @@ a:hover {
   border-radius: 100%;
   width: 55px;
   height: 40px;
-  line-height: 40px;
+  /* line-height: 40px; */
   text-align: center;
   background-color: #fff;
   font-family: sans-serif;
@@ -337,5 +337,12 @@ a image {
   #warrior-logo {
     width: 90px;
     height: 90px;
+  }
+}
+@media (max-width: 700px) {
+  #progress-num .step {
+    width: 40px;
+    height: 20px;
+    font-size: 11px;
   }
 }
