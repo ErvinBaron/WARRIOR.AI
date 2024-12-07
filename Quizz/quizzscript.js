@@ -34,10 +34,11 @@ const InfantryOptions = document.querySelectorAll("#infantry-container button");
 const infantryContainer = document.getElementById("infantry-container");
 const aFinish = document.querySelectorAll("#a-finish");
 const finishContainer = document.getElementById("finish-container");
-const progressBar = document.getElementById("progress-bar");
+const progressBar = document.getElementById("progress-indicator"); // Update to the child element
 const steps = document.querySelectorAll(".step");
 const mainContainer = document.getElementById("hero-main");
 let active = 1;
+
 mainContainer.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON" && event.target.type === "submit") {
     active++;
@@ -47,19 +48,21 @@ mainContainer.addEventListener("click", (event) => {
     updateProgress();
   }
 });
+
 const updateProgress = () => {
-    // Toggle active class on steps
-    steps.forEach((step, i) => {
-      if (i < active) {
-        step.classList.add("active");
-      } else {
-        step.classList.remove("active");
-      }
-    });
-  
-    // Update progress bar width
-    progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + "%";
-  };
+  // Toggle active class on steps
+  steps.forEach((step, i) => {
+    if (i < active) {
+      step.classList.add("active");
+    } else {
+      step.classList.remove("active");
+    }
+  });
+
+  // Update the progress-indicator width
+  progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + "%";
+};
+
 
 ageOptions.forEach((option) => {
   option.addEventListener("click", (event) => {
