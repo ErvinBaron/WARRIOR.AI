@@ -21,7 +21,8 @@ button {
   clip-path: polygon(15% 0, 100% 0, 100% 59%, 86% 100%, 0 100%, 0 44%);
   font-size: 30px;
   width: 40%;
-  height: 10%;
+  height: auto;
+
   outline: non;
   border: none;
   background-color: white;
@@ -170,6 +171,7 @@ a:hover {
 
 
 
+
 #age-container {
   display: flex;
 }
@@ -291,6 +293,7 @@ a:hover {
   display: flex;
   gap: 1vw;
   justify-content: space-evenly;
+
 }
 #progress-indicator {
   position: absolute;
