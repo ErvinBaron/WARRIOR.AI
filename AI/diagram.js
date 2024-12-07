@@ -100,59 +100,59 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.getElementById("piechart"));
   observer.observe(document.getElementById("chart_div"));
 });
-function drawChart() {
-  // Get the container where the chart will be rendered
-  var container = document.getElementById("timeline");
+// function drawChart() {
+//   // Get the container where the chart will be rendered
+//   var container = document.getElementById("timeline");
 
-  // Create a new Timeline chart instance
-  var chart = new google.visualization.Timeline(container);
+//   // Create a new Timeline chart instance
+//   var chart = new google.visualization.Timeline(container);
 
-  // Define the DataTable structure and add data
-  var dataTable = new google.visualization.DataTable();
-  dataTable.addColumn({ type: "string", id: "Day" });
-  dataTable.addColumn({ type: "string", id: "Name" });
-  dataTable.addColumn({ type: "date", id: "Start" });
-  dataTable.addColumn({ type: "date", id: "End" });
+//   // Define the DataTable structure and add data
+//   var dataTable = new google.visualization.DataTable();
+//   dataTable.addColumn({ type: "string", id: "Day" });
+//   dataTable.addColumn({ type: "string", id: "Name" });
+//   dataTable.addColumn({ type: "date", id: "Start" });
+//   dataTable.addColumn({ type: "date", id: "End" });
 
-  dataTable.addRows([
-    [
-      "Sunday",
-      "runnng",
-      new Date(0, 0, 0, 14, 0, 0),
-      new Date(0, 0, 0, 16, 0, 0),
-    ],
-    [
-      "Monday",
-      "HIIT",
-      new Date(0, 0, 0, 14, 30, 0),
-      new Date(0, 0, 0, 16, 30, 0),
-    ],
-    [
-      "Tuesday",
-      "weight liftting",
-      new Date(0, 0, 0, 16, 30, 0),
-      new Date(0, 0, 0, 19, 30, 0),
-    ],
-    [
-      "Wendsday",
-      "runnng",
-      new Date(0, 0, 0, 16, 30, 0),
-      new Date(0, 0, 0, 18, 0, 0),
-    ],
-    [
-      "Thursday",
-      "aerobics",
-      new Date(0, 0, 0, 14, 30, 0),
-      new Date(0, 0, 0, 16, 30, 0),
-    ],
-    [
-      "Firday",
-      "core",
-      new Date(0, 0, 0, 16, 30, 0),
-      new Date(0, 0, 0, 18, 30, 0),
-    ],
-  ]);
+//   dataTable.addRows([
+//     [
+//       "Sunday",
+//       "runnng",
+//       new Date(0, 0, 0, 14, 0, 0),
+//       new Date(0, 0, 0, 16, 0, 0),
+//     ],
+//     [
+//       "Monday",
+//       "HIIT",
+//       new Date(0, 0, 0, 14, 30, 0),
+//       new Date(0, 0, 0, 16, 30, 0),
+//     ],
+//     [
+//       "Tuesday",
+//       "weight liftting",
+//       new Date(0, 0, 0, 16, 30, 0),
+//       new Date(0, 0, 0, 19, 30, 0),
+//     ],
+//     [
+//       "Wendsday",
+//       "runnng",
+//       new Date(0, 0, 0, 16, 30, 0),
+//       new Date(0, 0, 0, 18, 0, 0),
+//     ],
+//     [
+//       "Thursday",
+//       "aerobics",
+//       new Date(0, 0, 0, 14, 30, 0),
+//       new Date(0, 0, 0, 16, 30, 0),
+//     ],
+//     [
+//       "Firday",
+//       "core",
+//       new Date(0, 0, 0, 16, 30, 0),
+//       new Date(0, 0, 0, 18, 30, 0),
+//     ],
+//   ]);
 
-  // Render the chart with the data
-  chart.draw(dataTable);
-}
+//   // Render the chart with the data
+//   chart.draw(dataTable);
+// }

@@ -39,7 +39,10 @@
   gap: 2vw;
 }
 li {
-  font-size: 14px;
+  font-size: 16px;
+}
+h2 {
+  font-size: 30px;
 }
 #personalization-pargraph,
 #weekly-program-paragraph,
@@ -53,6 +56,7 @@ li {
   opacity: 0.75;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding: 2vw;
+  font-size: 20px;
 }
 #Personalized,
 #weekly-program,
@@ -61,12 +65,11 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 85vw;
+  width: 90vw;
   height: auto;
+  flex-wrap: wrap;
 }
-#image3 {
-  border: solid red 1px;
-}
+
 #chart {
   width: 40vw;
   height: 40vw;
@@ -82,20 +85,21 @@ li {
 }
 @media (max-width: 1000px) {
   li {
-    font-size: 10px;
+    font-size: 14px;
   }
   #personalization-pargraph,
   #weekly-program-paragraph,
   #dietry-program-paragraph,
   #requirements-paragraph {
-    width: 40vw;
-    padding: 0;
+    width: 45vw;
+    padding: 1vw;
+    font-size: 16px;
   }
   #Personalized h2,
   #weekly-program h2,
   #dietry-program h2,
   #requirements h2 {
-    font-size: 25px;
+    font-size: 27px;
   }
   #Personalized,
   #weekly-program,
@@ -116,6 +120,14 @@ li {
     bottom: 15vh;
     width: 200px;
     height: 70px;
+  }
+}
+@media (max-width: 800px) {
+  #Personalized,
+  #weekly-program,
+  #dietry-program,
+  #requirements {
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 640px) {

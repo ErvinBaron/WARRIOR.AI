@@ -50,7 +50,7 @@ async function generateResponse(user) {
     i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
     my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
     my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
-     important physical aspect of the rule. make sure the workouts provided are as explained as possible.
+     important physical aspect of the rule. make sure the workouts provided are as explained as possible and be more than 120 words long.
      ensure that in the response you have the following structure: excercise_routine:<day of the week>:decription,activity. make sure every day is referenced even if it is a rest day. `;
     const result = await model.generateContent(prompt, generationConfig);
 
@@ -92,7 +92,7 @@ async function generateAI() {
 
   console.log(Userobject["routine"].sunday);
   const unitsummery = Userobject.unitsummery;
-  unitsummerydiv.innerHTML = `${unitsummery}`;
+  // unitsummerydiv.innerHTML = `${unitsummery}`;
   unitsummerydiv.style.fontSize = "18px";
 
   function typeWriter(element, text, speed = 25) {
