@@ -40,12 +40,12 @@
   padding-right: 9vw;
 }
 #titleTraining {
-  margin-top: 1.3vw;
+  margin-top: 2vw;
   width: 96vw;
   height: 6vw;
   display: flex;
   justify-content: left;
-  background: linear-gradient(-135deg, transparent 66px, #68770A 0);
+  background: linear-gradient(-135deg, transparent 4vw, #68770A 0);
 }
 #titleTraining h2 {
   display: flex;
@@ -88,7 +88,7 @@
 }
 #unitexercize {
   width: 96vw;
-  border: 2px solid #68770A;
+  box-shadow: 0 0 0 1px #68770A, 0 0 0 1px #68770A;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -166,7 +166,7 @@ h3 {
   #result {
     flex-wrap: wrap;
     width: 100%;
-    height: auto;
+    height: 100vw;
   }
   #titlediv {
     top: 0px;
