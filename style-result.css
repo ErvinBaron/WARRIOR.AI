@@ -69,6 +69,7 @@
   align-items: center;
   justify-content: center;
   padding: 3vw;
+  top: auto;
 }
 #main {
   top: 80px;
@@ -185,7 +186,9 @@
 #unitDiet {
   display: none;
 }
-
+a image {
+  width: 75vw;
+}
 h1,
 h3 {
   text-align: center;
@@ -265,7 +268,9 @@ h3 {
   #Graphtitle {
     height: auto;
   }
-  #titleTraining {margin-bottom: vh;}
+  #titleTraining {
+    margin-bottom: vh;
+  }
 }
 @media (max-width: 640px) {
 

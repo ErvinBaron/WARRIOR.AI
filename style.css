@@ -46,9 +46,7 @@ a image {
   }
 }
 @media (max-width: 700px) {
-  a image {
-    width: 40vw;
-  }
+ 
   #warrior-logo {
     width: 90px;
     height: 90px;
