@@ -40,18 +40,16 @@ const generationConfig = {
 async function generateResponse(user) {
   try {
     const prompt = `use clear and concise object keys. use under score "_" instead of "-". make sure you your answer start with "{" and end with "}", with no other text or element before or after. ensure you make the result look like a json and have no lists.
-     make sure all the object keys are of the following:
-     "age","height,"weight","unit","profile","unitsummery", "currentactivity", "routine". the routine key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
-     I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
-     assume i am a student, my school begine around 8am and ends in around 2pm.
-     incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
+    make sure all the object keys are of the following:
+    "age","height,"weight","unit","profile","unitsummery", "currentactivity", "routine". the day key should always have "activity" and "description". all keys should be lower case at all times. ALL KEYS MUST BE AS SPECIFIED, this is important!
+    I am a potential israeli army recruit,  and that i live in israel. saturday is a rest day and no activity is allowed.
+    assume i am a student, my school begine around 8am and ends in around 2pm.
+    incude a short summery about the requirements and specific mental and physical challenges that the ${user.Unit} entails.
     i am ${user.Age}, my height is ${user.Height} and my weight is ${user.Weight} kg. my goal is to reach the unit "${user.Unit}"
     my exercise background is ${user.Background}, and i have ${user.Frequency} time to exercise. i ${user.Gym_access} to the gym.
     my army profile is ${user.Profile}. prepare a workout routine centered around prospering in my chosen unit, center it around the most
-
-     important physical aspect of the rule. make sure the workouts provided are as explained as possible. in your response make sure you give at least 120 words about each day's exercise.
-      make then as fitting to the requirements of the chosen unit.`;
-     
+    important physical aspect of the rule. make sure the workouts provided are as explained as possible. in your response make sure you give at least 120 words about each day's exercise.
+    make then as fitting to the requirements of the chosen unit.`;
 
     const result = await model.generateContent(prompt, generationConfig);
 
@@ -82,12 +80,13 @@ async function generateAI() {
 
   const response = await generateResponse(userData);
   console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "")
+    response.replace("javascript", "").replace(" const", "").replaceAll("`", "").replace("json", "")
   );
   let dataobject = await response
     .replace("javascript", "")
     .replace(" const", "")
-    .replaceAll("`", "");
+    .replaceAll("`", "")
+    .replace("json", "");
 
   let Userobject = await JSON.parse(dataobject);
 
@@ -96,7 +95,7 @@ async function generateAI() {
 
   unitsummerydiv.style.fontSize = "18px";
   unitsummerydiv.innerHTML = "";
-  function typeWriter(element, text, speed = 4) {
+  function typeWriter(element, text, speed = 2) {
     let i = 0;
     function type() {
       if (i < text.length) {
@@ -115,15 +114,6 @@ async function generateAI() {
   typeWriter(wednesday, `${Userobject["routine"].wednesday.description}`);
   typeWriter(friday, `${Userobject["routine"].friday.description}`);
   typeWriter(saturday, `${Userobject["routine"].saturday.description}`);
-  // unitsummerydiv.innerHTML = `${unitsummery}`;
-
-  // sunday.textContent = `${Userobject["routine"].sunday.description}`;
-  // monday.textContent = `${Userobject["routine"].monday.description}`;
-  // tuesday.textContent = `${Userobject["routine"].tuesday.description}`;
-  // thursday.textContent = `${Userobject["routine"].thursday.description}`;
-  // wednesday.textContent = `${Userobject["routine"].wednesday.description}`;
-  // friday.textContent = `${Userobject["routine"].friday.description}`;
-  // saturday.textContent = `${Userobject["routine"].saturday.description}`;
 }
 window.onload = generateAI();
 
