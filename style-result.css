@@ -78,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: url("./images/Image 2/Image 2.png");
 }
 #footer {
   position: relative;
@@ -298,4 +299,5 @@ h3 {
 }
 #result-bmi {
   color: white;
+}
 }
