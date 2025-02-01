@@ -46,22 +46,19 @@ function drawChart() {
 }
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
-    root: null, // Observes within the viewport
+    root: null, 
     rootMargin: "0px",
-    threshold: 0.5, // Trigger when 50% of the element is visible
+    threshold: 0.5, 
   };
 
-  // Callback to run when elements intersect the viewport
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const chartId = entry.target.id;
 
-        // Trigger the appropriate chart drawing function
 
         if (chartId === "chart") drawAreaChart();
 
-        // Stop observing after the chart is drawn
         observer.unobserve(entry.target);
       }
     });
@@ -69,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  // Start observing the chart containers
 
   observer.observe(document.getElementById("chart"));
 });

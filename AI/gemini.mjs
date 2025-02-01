@@ -9,7 +9,7 @@ const wednesday = document.getElementById("wednesday");
 const thursday = document.getElementById("thursday");
 const friday = document.getElementById("friday");
 const saturday = document.getElementById("saturday");
-const genAI = new GoogleGenerativeAI("AIzaSyAWqTZzqkPG9VlZvn5AwS2aeu4KoPTGLPk");
+const genAI = new GoogleGenerativeAI("");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const unitArray = {
   Golani: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/S32fPU0yq6M?si=VmJqstq7c-NqjP-J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
@@ -80,7 +80,11 @@ async function generateAI() {
 
   const response = await generateResponse(userData);
   console.log(
-    response.replace("javascript", "").replace(" const", "").replaceAll("`", "").replace("json", "")
+    response
+      .replace("javascript", "")
+      .replace(" const", "")
+      .replaceAll("`", "")
+      .replace("json", "")
   );
   let dataobject = await response
     .replace("javascript", "")
